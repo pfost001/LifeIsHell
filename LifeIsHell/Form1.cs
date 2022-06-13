@@ -13,6 +13,8 @@ namespace LifeIsHell
         bool allText = false;
         public static Player currentPlayer = new Player();
         public static Location location = new Location();
+        int enemyhealth;
+        int enemyattack;
 
         public frmStartGame()
         {
@@ -155,7 +157,7 @@ namespace LifeIsHell
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         public void NewPlayerSheet()
@@ -194,6 +196,7 @@ namespace LifeIsHell
             {
                 case < 330:
                     RandomEncounter();
+                    boxDirections.Visible = false;
                     break;
                 case > 330:
                     break;
@@ -203,9 +206,41 @@ namespace LifeIsHell
         public void RandomEncounter()
         {
             string name = GetName();
-            txtMainScreen.Text = "The worst of humanity lives in hell." + Environment.NewLine;
-            txtMainScreen.AppendText("You see " + name + Environment.NewLine);
+            txtMainScreen.Text = "Only the worst of humanity lives in hell." + Environment.NewLine;
+            txtMainScreen.AppendText("You see a " + name + Environment.NewLine);
+            txtMainScreen.AppendText("They charge at you, weapon raised!" + Environment.NewLine);
+            CombatText(true, name, 0, 0);
 
+        }
+        public void CombatText(bool normalfight, string name, int attack, int health)
+        {
+            if (normalfight == true)
+            {
+                txtMainScreen.AppendText("Enemy: " + name + Environment.NewLine);
+                enemyattack = currentPlayer.EnemyPower();
+                enemyhealth = currentPlayer.EnemyHealth();
+                txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                txtMainScreen.AppendText(Environment.NewLine);
+                ShowPlayerStats();
+            }
+            else
+            {
+                txtMainScreen.AppendText("Enemy: " + name + Environment.NewLine);
+                txtMainScreen.AppendText("Health: " + health + Environment.NewLine);
+                txtMainScreen.AppendText("Power: " + attack + Environment.NewLine);
+                txtMainScreen.AppendText(Environment.NewLine);
+                ShowPlayerStats();
+            }
+        }
+        public void Combat(string buttonkey)
+        
+        public void ShowPlayerStats()
+        {
+            txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Weapon Power: " + currentPlayer.PlayerAttack + Environment.NewLine);
+            txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Armor Value: " + currentPlayer.PlayerArmor + Environment.NewLine);
+            txtMainScreen.AppendText(currentPlayer.PlayerName + "'s CurrentHealth: " + currentPlayer.PlayerHealth + Environment.NewLine);
+            txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Potions: " + currentPlayer.PlayerPotions + Environment.NewLine);
         }
         public static string GetName()
         {
