@@ -47,6 +47,7 @@
             this.btnNorth = new System.Windows.Forms.Button();
             this.picboxMainScreen = new System.Windows.Forms.PictureBox();
             this.txtMainScreen = new System.Windows.Forms.TextBox();
+            this.btnEnterShop = new System.Windows.Forms.Button();
             this.boxDirections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxMainScreen)).BeginInit();
             this.SuspendLayout();
@@ -301,11 +302,23 @@
             this.txtMainScreen.Visible = false;
             this.txtMainScreen.TextChanged += new System.EventHandler(this.txtMainScren_TextChanged);
             // 
+            // btnEnterShop
+            // 
+            this.btnEnterShop.BackColor = System.Drawing.Color.Black;
+            this.btnEnterShop.Location = new System.Drawing.Point(982, 658);
+            this.btnEnterShop.Name = "btnEnterShop";
+            this.btnEnterShop.Size = new System.Drawing.Size(100, 48);
+            this.btnEnterShop.TabIndex = 15;
+            this.btnEnterShop.Text = "Enter Shop";
+            this.btnEnterShop.UseVisualStyleBackColor = false;
+            this.btnEnterShop.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmStartGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.btnEnterShop);
             this.Controls.Add(this.txtMainScreen);
             this.Controls.Add(this.picboxMainScreen);
             this.Controls.Add(this.boxDirections);
@@ -351,5 +364,6 @@
         public TextBox txtIntroText;
         public PictureBox picboxMainScreen;
         public TextBox txtMainScreen;
+        private Button btnEnterShop;
     }
 }

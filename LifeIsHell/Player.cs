@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace LifeIsHell
 {
-    public class Player
+    
+       public class Player
         
     {
         public string PlayerName = "";
@@ -21,6 +22,7 @@ namespace LifeIsHell
         public int GameDiff = 0;
         public int FormerPlayerLocX = 0;
         public int FormerPlayerLocY = 0;
+        public int PlayerPotions = 5;
 
     }
     

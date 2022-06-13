@@ -91,24 +91,29 @@ namespace LifeIsHell
         {
             currentPlayer.PlayerLocX++;
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            CheckShop();
         }
 
         private void btnEast_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocY++;
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            CheckShop();
         }
+    
 
         private void btnSouth_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocX--;
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            CheckShop();
         }
 
         private void btnWest_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocY--;
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            CheckShop();
         }
 
         private void boxDirections_Enter(object sender, EventArgs e)
@@ -164,6 +169,20 @@ namespace LifeIsHell
         public void txtMainScren_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnEnterShop_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void CheckShop()
+        {
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            {
+                btnEnterShop.Visible = true;
+            }
+            else
+                btnEnterShop.Visible = false;
         }
     }
 }
