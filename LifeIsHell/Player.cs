@@ -16,14 +16,35 @@ namespace LifeIsHell
         public int PlayerCoin = 0;
         public int PlayerLocX = 0;
         public int PlayerLocY = 0;
-        public int PlayerAttack = 0;
-        public int PlayerHealth = 0;
-        public int PlayerArmor = 0;
-        public int GameDiff = 0;
+        public int PlayerAttack = 1;
+        public int PlayerHealth = 10;
+        public int PlayerArmor = 1;
+        public int GameDiff = 1;
         public int FormerPlayerLocX = 0;
         public int FormerPlayerLocY = 0;
         public int PlayerPotions = 5;
-
+        public int EnemyPower()
+        {
+            Random rand = new Random();
+            int upper = (2 * GameDiff + 2);
+            int lower = (1 * GameDiff + GameDiff/2);
+            return rand.Next(lower, upper);
+        }
+        public int EnemyHealth()
+        {
+            Random rand = new Random();
+            int upper = (4 * GameDiff + 5);
+            int lower = (2 * GameDiff);
+            return rand.Next(lower, upper);
+        }
+        public int WinCoins()
+        {
+            Random rand = new Random();
+            int upper = (5 * GameDiff + 9);
+            int lower = (2 * GameDiff + 3);
+            return rand.Next(lower, upper);
+        }
     }
+
     
 }

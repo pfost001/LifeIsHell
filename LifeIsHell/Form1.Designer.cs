@@ -305,13 +305,14 @@
             // btnEnterShop
             // 
             this.btnEnterShop.BackColor = System.Drawing.Color.Black;
-            this.btnEnterShop.Location = new System.Drawing.Point(982, 658);
+            this.btnEnterShop.Location = new System.Drawing.Point(1002, 657);
             this.btnEnterShop.Name = "btnEnterShop";
             this.btnEnterShop.Size = new System.Drawing.Size(100, 48);
             this.btnEnterShop.TabIndex = 15;
             this.btnEnterShop.Text = "Enter Shop";
             this.btnEnterShop.UseVisualStyleBackColor = false;
-            this.btnEnterShop.Click += new System.EventHandler(this.button1_Click);
+            this.btnEnterShop.Visible = false;
+            this.btnEnterShop.Click += new System.EventHandler(this.btnEnterShop_Click);
             // 
             // frmStartGame
             // 

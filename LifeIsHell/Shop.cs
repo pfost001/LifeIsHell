@@ -18,65 +18,137 @@ namespace LifeIsHell
         public string maxhealth;
         public string numpotions;
         public string difflevel;
-        
+        public int playercoins;
+        int armorprice;
+        int weaponprice;
+        int healthprice;
+        int potionprice;
+        int diffprice;
+
 
         public Shop(Player currentPlayer)
         {
             InitializeComponent();
             shopPlayer = currentPlayer;
-            
-            
+            GetStats();
+            SetPrices();
+
+
 
         }
 
         private void lblStoreItems_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void GetStats()
         {
-            weapons = "" + shopPlayer.PlayerAttack + Environment.NewLine;
-            armor = "" + shopPlayer.PlayerArmor + Environment.NewLine;
-            maxhealth = "" + shopPlayer.PlayerHealth + Environment.NewLine;
-            numpotions = "" + shopPlayer.PlayerPotions + Environment.NewLine;
-            difflevel = "" + shopPlayer.GameDiff + Environment.NewLine;
+            weapons = "Weapon Power: " + shopPlayer.PlayerAttack + Environment.NewLine;
+            armor = "Armor Value: " + shopPlayer.PlayerArmor + Environment.NewLine;
+            maxhealth = "Maximum Health: " + shopPlayer.PlayerHealth + Environment.NewLine;
+            numpotions = "Potions: " + shopPlayer.PlayerPotions + Environment.NewLine;
+            difflevel = "Difficulty Level: " + shopPlayer.GameDiff + Environment.NewLine;
+            playercoins = shopPlayer.PlayerCoin;
             CompileStats();
+            SetPrices();
         }
 
         private void btnBuyArmor_Click(object sender, EventArgs e)
         {
-            shopPlayer.PlayerArmor++;
-            GetStats();
+            lblNoMoney.Visible = false;
+            CheckCoin("armor", armorprice);
 
         }
 
         private void btnBuyWeapon_Click(object sender, EventArgs e)
         {
-            shopPlayer.PlayerAttack++;
-            GetStats();
+            lblNoMoney.Visible = false;
+            CheckCoin("weapon", weaponprice);
         }
 
         private void btnBuyHealth_Click(object sender, EventArgs e)
         {
-            shopPlayer.PlayerHealth++;
-            GetStats();
+            lblNoMoney.Visible = false;
+            CheckCoin("health", healthprice);
         }
 
         private void btnBuyPotion_Click(object sender, EventArgs e)
         {
-            shopPlayer.PlayerPotions++;
-            GetStats();
+            lblNoMoney.Visible = false;
+            CheckCoin("potion", potionprice);
         }
 
         private void btnBuyDiff_Click(object sender, EventArgs e)
         {
-            shopPlayer.GameDiff++;
-            GetStats();
+            lblNoMoney.Visible = false;
+            CheckCoin("diff", diffprice);
         }
         private void CompileStats()
         {
             txtShopPlayerStats.Text = weapons + armor + maxhealth + numpotions + difflevel;
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void SetPrices()
+        {
+
+            CalcPrices();
+            txtArmorPrice.Text = "" + armorprice;
+            txtWeaponPrice.Text = "" + weaponprice;
+            txtHealthPrice.Text = "" + healthprice;
+            txtPotionPrice.Text = "" + potionprice;
+            txtDiffPrice.Text = "" + diffprice;
+
+        }
+
+        public void CalcPrices()
+        {
+            armorprice = shopPlayer.PlayerArmor * 100;
+            weaponprice = shopPlayer.PlayerAttack * 50;
+            healthprice = shopPlayer.PlayerHealth * 10;
+            potionprice = 25;
+            diffprice = shopPlayer.GameDiff * 25;
+        }
+        public void CheckCoin(string item, int price)
+        {
+            if (shopPlayer.PlayerCoin < price)
+            {
+                lblNoMoney.Visible = true;
+            }
+            else
+            {
+                if (item == "diff")
+                {
+                    shopPlayer.GameDiff++;
+                }
+                else if (item == "weapon")
+                {
+                    shopPlayer.PlayerAttack++;
+                }
+                else if (item == "armor")
+                {
+                    shopPlayer.PlayerArmor++;
+                }
+                else if (item == "potion")
+                {
+                    shopPlayer.PlayerPotions++;
+                }
+                else if (item == "health")
+                {
+                    shopPlayer.PlayerHealth++;
+                }
+            }
+            GetStats();
+            SetPrices();
+        }
+
+
+
+
     }
 }

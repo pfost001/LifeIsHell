@@ -8,6 +8,7 @@ namespace LifeIsHell
 {
     public class Location
     {
+        Random rand = new Random();
       
         public void PlayerLocation(Player currentPlayer, TextBox mainScreen, PictureBox mainPicture) //this function will load the text and pictures for each block location
         {
@@ -48,6 +49,9 @@ namespace LifeIsHell
                 mainScreen.AppendText("Don't interact with yourself in public.");
             }
         }
+
+        
+        
             
     }
 }

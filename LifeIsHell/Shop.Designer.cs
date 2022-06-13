@@ -46,6 +46,8 @@
             this.txtPotionPrice = new System.Windows.Forms.TextBox();
             this.txtDiffPrice = new System.Windows.Forms.TextBox();
             this.lblStoreStats = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lblNoMoney = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtShopPlayerStats
@@ -55,7 +57,7 @@
             this.txtShopPlayerStats.Multiline = true;
             this.txtShopPlayerStats.Name = "txtShopPlayerStats";
             this.txtShopPlayerStats.ReadOnly = true;
-            this.txtShopPlayerStats.Size = new System.Drawing.Size(159, 221);
+            this.txtShopPlayerStats.Size = new System.Drawing.Size(394, 179);
             this.txtShopPlayerStats.TabIndex = 0;
             // 
             // btnBuyArmor
@@ -188,7 +190,7 @@
             // 
             // txtWeaponPrice
             // 
-            this.txtWeaponPrice.Location = new System.Drawing.Point(274, 352);
+            this.txtWeaponPrice.Location = new System.Drawing.Point(274, 384);
             this.txtWeaponPrice.Name = "txtWeaponPrice";
             this.txtWeaponPrice.ReadOnly = true;
             this.txtWeaponPrice.Size = new System.Drawing.Size(72, 23);
@@ -196,7 +198,7 @@
             // 
             // txtArmorPrice
             // 
-            this.txtArmorPrice.Location = new System.Drawing.Point(274, 386);
+            this.txtArmorPrice.Location = new System.Drawing.Point(274, 354);
             this.txtArmorPrice.Name = "txtArmorPrice";
             this.txtArmorPrice.ReadOnly = true;
             this.txtArmorPrice.Size = new System.Drawing.Size(72, 23);
@@ -238,12 +240,39 @@
             this.lblStoreStats.TabIndex = 17;
             this.lblStoreStats.Text = "Player Statistics";
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(352, 521);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(79, 28);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lblNoMoney
+            // 
+            this.lblNoMoney.AutoSize = true;
+            this.lblNoMoney.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNoMoney.ForeColor = System.Drawing.Color.Red;
+            this.lblNoMoney.Location = new System.Drawing.Point(54, 263);
+            this.lblNoMoney.Name = "lblNoMoney";
+            this.lblNoMoney.Size = new System.Drawing.Size(358, 26);
+            this.lblNoMoney.TabIndex = 19;
+            this.lblNoMoney.Text = "You do not have enough coins to do that.";
+            this.lblNoMoney.Visible = false;
+            // 
             // Shop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 588);
             this.ControlBox = false;
+            this.Controls.Add(this.lblNoMoney);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblStoreStats);
             this.Controls.Add(this.txtDiffPrice);
             this.Controls.Add(this.txtPotionPrice);
@@ -292,5 +321,7 @@
         private TextBox txtPotionPrice;
         private TextBox txtDiffPrice;
         private Label lblStoreStats;
+        private Button btnExit;
+        private Label lblNoMoney;
     }
 }
