@@ -65,13 +65,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Impact", 140F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Impact", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitle.Location = new System.Drawing.Point(568, 280);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(436, 228);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Title";
+            this.lblTitle.Text = "Life is Hell";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTitle.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -131,7 +131,7 @@
             this.txtIntroText.BackColor = System.Drawing.Color.Black;
             this.txtIntroText.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIntroText.ForeColor = System.Drawing.Color.White;
-            this.txtIntroText.Location = new System.Drawing.Point(296, 80);
+            this.txtIntroText.Location = new System.Drawing.Point(296, 79);
             this.txtIntroText.Multiline = true;
             this.txtIntroText.Name = "txtIntroText";
             this.txtIntroText.ReadOnly = true;

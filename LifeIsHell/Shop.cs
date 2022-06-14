@@ -18,14 +18,13 @@ namespace LifeIsHell
         public string maxhealth;
         public string numpotions;
         public string difflevel;
-        public int playercoins;
+        public string playercoins;
         int armorprice;
         int weaponprice;
         int healthprice;
         int potionprice;
         int diffprice;
-
-
+        
         public Shop(Player currentPlayer)
         {
             InitializeComponent();
@@ -49,7 +48,7 @@ namespace LifeIsHell
             maxhealth = "Maximum Health: " + shopPlayer.PlayerHealth + Environment.NewLine;
             numpotions = "Potions: " + shopPlayer.PlayerPotions + Environment.NewLine;
             difflevel = "Difficulty Level: " + shopPlayer.GameDiff + Environment.NewLine;
-            playercoins = shopPlayer.PlayerCoin;
+            playercoins = "Player Coins: " + shopPlayer.PlayerCoin + Environment.NewLine;
             CompileStats();
             SetPrices();
         }
@@ -86,7 +85,7 @@ namespace LifeIsHell
         }
         private void CompileStats()
         {
-            txtShopPlayerStats.Text = weapons + armor + maxhealth + numpotions + difflevel;
+            txtShopPlayerStats.Text = weapons + armor + maxhealth + numpotions + difflevel + playercoins;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -140,7 +139,7 @@ namespace LifeIsHell
                 }
                 else if (item == "health")
                 {
-                    shopPlayer.PlayerHealth++;
+                    shopPlayer.PlayerMaxHealth++;
                 }
             }
             GetStats();

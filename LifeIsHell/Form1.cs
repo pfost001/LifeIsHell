@@ -16,6 +16,7 @@ namespace LifeIsHell
         string enemyname;
         int enemyhealth;
         int enemyattack;
+        int woncoins;
 
         public frmStartGame()
         {
@@ -46,7 +47,9 @@ namespace LifeIsHell
             btnLoadGame.Visible = false;
             txtIntroText.Visible = true;
             btnIntroContinue.Visible = true;
-            txtIntroText.Text = "This is the intro text.";
+            txtIntroText.Text = "You awake to screaming all around you." + Environment.NewLine;
+            txtIntroText.AppendText("You are surrounded by fire and winged creatures fly through the sky." + Environment.NewLine);
+            txtIntroText.AppendText("'Hello' you hear from behind you.");
             firstText = true;
         }
 
@@ -58,7 +61,8 @@ namespace LifeIsHell
         {
             if (firstText == true)
             {
-                txtIntroText.Text = "This is the second intro text.";
+                txtIntroText.Text = "You turn around and see the Devil." + Environment.NewLine;
+                txtIntroText.AppendText("Not a devil, the actual Devil" + Environment.NewLine);
                 secondText = true;
                 firstText = false;
             }
@@ -263,8 +267,8 @@ namespace LifeIsHell
                 enemyname = name;
                 enemyattack = currentPlayer.EnemyPower();
                 enemyhealth = currentPlayer.EnemyHealth();
-                txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
-                txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                txtMainScreen.AppendText("Enemy Health: " + enemyhealth + Environment.NewLine);
+                txtMainScreen.AppendText("Enemy Power: " + enemyattack + Environment.NewLine);
                 txtMainScreen.AppendText(Environment.NewLine);
                 ShowPlayerStats();
             }
@@ -282,19 +286,35 @@ namespace LifeIsHell
         }
         public void Combat(string buttonkey)
         {
-            if (enemyhealth > 0) {
+            if (currentPlayer.PlayerHealth > 0)
+            {
                 if (buttonkey == "attack")
                 {
                     txtMainScreen.AppendText(GetAttackText() + Environment.NewLine);
                     int playerdamage = currentPlayer.AttackCalc();
                     txtMainScreen.AppendText("You deal " + playerdamage + " damage." + Environment.NewLine);
                     enemyhealth -= playerdamage;
-                    txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
-                    currentPlayer.PlayerHealth -= enemyattack;
-                    txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
-                    txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
-                    txtMainScreen.AppendText(Environment.NewLine);
-                    ShowPlayerStats();
+                    if (enemyhealth > 0)
+                    {
+                        txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
+                        currentPlayer.PlayerHealth -= enemyattack;
+                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText(Environment.NewLine);
+                        ShowPlayerStats();
+                        AreDead();
+                    }
+                    else
+                    {
+                        txtMainScreen.AppendText("You have won the fight.");
+                        currentPlayer.PlayerCoin += currentPlayer.WinCoins();
+                        txtMainScreen.AppendText("You gain " + woncoins + " coins." + Environment.NewLine);
+                        btnAttack.Visible = false;
+                        btnDefend.Visible = false;
+                        btnPotion.Visible = false;
+                        btnRun.Visible = false;
+                        btnExitCombat.Visible = true;
+                    }
 
                 }
                 else if (buttonkey == "defend")
@@ -303,12 +323,27 @@ namespace LifeIsHell
                     int playerdamage = currentPlayer.DefendCalc();
                     txtMainScreen.AppendText("You deal " + playerdamage + " damage." + Environment.NewLine);
                     enemyhealth -= playerdamage;
-                    txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
-                    currentPlayer.PlayerHealth -= enemyattack;
-                    txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
-                    txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
-                    txtMainScreen.AppendText(Environment.NewLine);
-                    ShowPlayerStats();
+                    if (enemyhealth > 0)
+                    {
+                        txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
+                        currentPlayer.PlayerHealth -= enemyattack;
+                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText(Environment.NewLine);
+                        ShowPlayerStats();
+                        AreDead();
+                    }
+                    else
+                    {
+                        txtMainScreen.AppendText("You have won the fight.");
+                        currentPlayer.PlayerCoin += currentPlayer.WinCoins();
+                        txtMainScreen.AppendText("You gain " + woncoins + " coins." + Environment.NewLine);
+                        btnAttack.Visible = false;
+                        btnDefend.Visible = false;
+                        btnPotion.Visible = false;
+                        btnRun.Visible = false;
+                        btnExitCombat.Visible = true;
+                    }
                 }
                 else if (buttonkey == "potion")
                 {
@@ -317,11 +352,17 @@ namespace LifeIsHell
                         int potionvalue = currentPlayer.GameDiff + 5;
                         txtMainScreen.AppendText("You drink the vile tasting liquid." + Environment.NewLine);
                         txtMainScreen.AppendText("You regain " + potionvalue + " health." + Environment.NewLine);
+                        currentPlayer.PlayerHealth = currentPlayer.PlayerHealth + potionvalue;
+                        if (currentPlayer.PlayerHealth > currentPlayer.PlayerMaxHealth)
+                        {
+                            currentPlayer.PlayerHealth = currentPlayer.PlayerMaxHealth;
+                        }
                         currentPlayer.PlayerPotions -= 1;
-                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
-                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText("Enemy Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Enemy Power: " + enemyattack + Environment.NewLine);
                         txtMainScreen.AppendText(Environment.NewLine);
                         ShowPlayerStats();
+                        AreDead();
                     }
                     else
                     {
@@ -329,10 +370,11 @@ namespace LifeIsHell
                         txtMainScreen.AppendText("The enemy hits you while you search for a potion." + Environment.NewLine);
                         currentPlayer.PlayerHealth -= enemyattack;
                         txtMainScreen.AppendText("You take " + enemyattack + " damage.");
-                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
-                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText("Enemy Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Enemy Power: " + enemyattack + Environment.NewLine);
                         txtMainScreen.AppendText(Environment.NewLine);
                         ShowPlayerStats();
+                        AreDead();
                     }
                 }
                 else if (buttonkey == "run")
@@ -356,15 +398,24 @@ namespace LifeIsHell
                         btnRun.Visible = false;
                         btnExitCombat.Visible = true;
                     }
-                    
+
                 }
-                else
-                {
-                    
-                    int woncoins = currentPlayer.WinCoins();
-                    txtMainScreen.AppendText("You gain " + woncoins + " coins.");
-                }
+
             }
+
+
+        }
+        public void EndCombat()
+        {
+            btnAttack.Visible = false;
+            btnDefend.Visible = false;
+            btnPotion.Visible = false;
+            btnRun.Visible = false;
+            btnExitCombat.Visible = true;
+            boxCombat.Visible = false;
+            boxDirections.Visible = true;
+            txtMainScreen.Text = "";
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
 
         }
 
@@ -606,11 +657,42 @@ namespace LifeIsHell
 
         private void btnExitCombat_Click(object sender, EventArgs e)
         {
-            boxCombat.Visible = false;
-            boxDirections.Visible = true;
-            txtMainScreen.Text = "";
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            if (currentPlayer.PlayerHealth > 0)
+            {
+                EndCombat();
+            }
+            else
+            {
+                btnAttack.Visible = false;
+                btnDefend.Visible = false;
+                btnPotion.Visible = false;
+                btnRun.Visible = false;
+                btnExitCombat.Visible = true;
+                boxCombat.Visible = false;
+                boxDirections.Visible = true;
+                txtMainScreen.Text = "You have been reborn!";
+                currentPlayer.PlayerLocX = 0;
+                currentPlayer.PlayerLocY = 0;
+                currentPlayer.PlayerCoin = 0; 
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+
+
+            }
 
         }
+        public void AreDead()
+        {
+            if (currentPlayer.PlayerHealth <= 0)
+            {
+                txtMainScreen.Text = "You have died and lost all your coins.";
+                btnAttack.Visible = false;
+                btnDefend.Visible = false;
+                btnPotion.Visible = false;
+                btnRun.Visible = false;
+                btnExitCombat.Visible = true;
+            }
+        }
+
     }
 }
+

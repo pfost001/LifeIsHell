@@ -16,7 +16,9 @@ namespace LifeIsHell
             {
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("This is the location 0, 0.");
+                mainScreen.AppendText("You are standing at the center of Hell." + Environment.NewLine);
+                mainScreen.AppendText("The screams of agony and pain echo in the distance." + Environment.NewLine);
+                mainScreen.AppendText("You can see Tom's Gift Shop nearby.");
                 
             }
             if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
@@ -92,7 +94,7 @@ namespace LifeIsHell
             {
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("There is no one to talk to.");
+                mainScreen.AppendText("There is no one else to talk to.");
             }
 
         }

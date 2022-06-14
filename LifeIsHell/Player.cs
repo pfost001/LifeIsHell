@@ -14,7 +14,7 @@ namespace LifeIsHell
         Random random = new Random();
         public string PlayerName = "";
         public int SaveCounter = 0;
-        public int PlayerCoin = 0;
+        public int PlayerCoin = 10;
         public int PlayerLocX = 0;
         public int PlayerLocY = 0;
         public int PlayerAttack = 1;
@@ -24,6 +24,7 @@ namespace LifeIsHell
         public int FormerPlayerLocX = 0;
         public int FormerPlayerLocY = 0;
         public int PlayerPotions = 5;
+        public int PlayerMaxHealth = 10;
         public int EnemyPower()
         {
             Random rand = new Random();
