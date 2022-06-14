@@ -13,6 +13,7 @@ namespace LifeIsHell
         bool allText = false;
         public static Player currentPlayer = new Player();
         public static Location location = new Location();
+        string enemyname;
         int enemyhealth;
         int enemyattack;
 
@@ -195,8 +196,8 @@ namespace LifeIsHell
             switch (fightCheck)
             {
                 case < 330:
-                    RandomEncounter();
                     boxDirections.Visible = false;
+                    RandomEncounter();
                     break;
                 case > 330:
                     break;
@@ -217,6 +218,7 @@ namespace LifeIsHell
             if (normalfight == true)
             {
                 txtMainScreen.AppendText("Enemy: " + name + Environment.NewLine);
+                enemyname = name;
                 enemyattack = currentPlayer.EnemyPower();
                 enemyhealth = currentPlayer.EnemyHealth();
                 txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
@@ -227,20 +229,98 @@ namespace LifeIsHell
             else
             {
                 txtMainScreen.AppendText("Enemy: " + name + Environment.NewLine);
+                enemyname = name;
                 txtMainScreen.AppendText("Health: " + health + Environment.NewLine);
+                enemyhealth = health;
                 txtMainScreen.AppendText("Power: " + attack + Environment.NewLine);
+                enemyattack = attack;
                 txtMainScreen.AppendText(Environment.NewLine);
                 ShowPlayerStats();
             }
         }
         public void Combat(string buttonkey)
-        
+        {
+            while (enemyhealth > 0)
+            {
+                if (buttonkey == "attack")
+                {
+                    txtMainScreen.AppendText(GetAttackText() + Environment.NewLine);
+                    int playerdamage = currentPlayer.AttackCalc();
+                    txtMainScreen.AppendText("You deal " + playerdamage + " damage." + Environment.NewLine);
+                    enemyhealth -= playerdamage;
+                    txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
+                    currentPlayer.PlayerHealth -= enemyattack;
+
+                }
+                else if (buttonkey == "defend")
+                {
+                    txtMainScreen.AppendText("You focus your efforts on defending yourself.");
+                    int playerdamage = currentPlayer.DefendCalc();
+                    txtMainScreen.AppendText("You deal " + playerdamage + " damage." + Environment.NewLine);
+                    enemyhealth -= playerdamage;
+                    txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
+                    currentPlayer.PlayerHealth -= enemyattack;
+                }
+                else if (buttonkey == "potion")
+                {
+                    if (currentPlayer.PlayerPotions > 0)
+                    {
+                        int potionvalue = currentPlayer.GameDiff + 5;
+                        txtMainScreen.AppendText("You drink the vile tasting liquid." + Environment.NewLine);
+                        txtMainScreen.AppendText("You regain " + potionvalue + " health." + Environment.NewLine);
+                        currentPlayer.PlayerPotions -= 1;
+                    }
+                    else
+                    {
+                        txtMainScreen.AppendText("You fumble for a potion to discover that you have run out." + Environment.NewLine);
+                        txtMainScreen.AppendText("The enemy hits you while you search for a potion." + Environment.NewLine);
+                        currentPlayer.PlayerHealth -= enemyattack;
+                        txtMainScreen.AppendText("You take " + enemyattack + " damage.");
+                    }
+                }
+                else if (buttonkey == "run")
+                {
+                    Random random = new Random();
+                    int runchance = random.Next(0, 4);
+                    if (runchance == 0)
+                    {
+                        txtMainScreen.AppendText("You fail to escape and the enemy strikes you!");
+                        txtMainScreen.AppendText("You take " + enemyattack + " damage.");
+                        currentPlayer.PlayerHealth -= enemyattack;
+
+                    }
+                    else
+                    {
+                        txtMainScreen.AppendText("Your dodgeball skills pay off and you escape.");
+                        
+                    }
+                }
+            }
+        }
+
         public void ShowPlayerStats()
         {
             txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Weapon Power: " + currentPlayer.PlayerAttack + Environment.NewLine);
             txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Armor Value: " + currentPlayer.PlayerArmor + Environment.NewLine);
             txtMainScreen.AppendText(currentPlayer.PlayerName + "'s CurrentHealth: " + currentPlayer.PlayerHealth + Environment.NewLine);
             txtMainScreen.AppendText(currentPlayer.PlayerName + "'s Potions: " + currentPlayer.PlayerPotions + Environment.NewLine);
+        }
+        public static string GetAttackText()
+        {
+            Random random = new Random();
+            switch (random.Next(0, 4))
+            {
+                case 0:
+                    return "You focus your efforts on a heavy attack.";
+                case 1:
+                    return "You take a mighty swing with your sword.";
+                case 2:
+                    return "You swing wildly at your enemy.";
+                case 3:
+                    return "You slash downward with your sword.";
+
+            }
+            return "";
         }
         public static string GetName()
         {

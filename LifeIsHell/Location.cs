@@ -48,6 +48,18 @@ namespace LifeIsHell
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("Don't interact with yourself in public.");
             }
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("There is nothing to interact with.");
+            }
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You do not see anything to interact with.");
+            }
         }
 
         
