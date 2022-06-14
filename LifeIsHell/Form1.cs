@@ -95,30 +95,66 @@ namespace LifeIsHell
         private void btnNorth_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocX++;
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
+            else
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+                RandomEncounterGen();
+            }
         }
 
         private void btnEast_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocY++;
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
+            else
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+                RandomEncounterGen();
+            }
         }
 
 
         private void btnSouth_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocX--;
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
+            else
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+                RandomEncounterGen();
+            }
         }
 
         private void btnWest_Click(object sender, EventArgs e)
         {
             currentPlayer.PlayerLocY--;
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
+            else
+            {
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+                RandomEncounterGen();
+            }
         }
 
         private void boxDirections_Enter(object sender, EventArgs e)
@@ -197,6 +233,12 @@ namespace LifeIsHell
             {
                 case < 330:
                     boxDirections.Visible = false;
+                    boxCombat.Visible = true;
+                    btnAttack.Visible = true;
+                    btnDefend.Visible = true;
+                    btnPotion.Visible = true;
+                    btnExitCombat.Visible = false;
+                    btnRun.Visible = true;
                     RandomEncounter();
                     break;
                 case > 330:
@@ -240,8 +282,7 @@ namespace LifeIsHell
         }
         public void Combat(string buttonkey)
         {
-            while (enemyhealth > 0)
-            {
+            if (enemyhealth > 0) {
                 if (buttonkey == "attack")
                 {
                     txtMainScreen.AppendText(GetAttackText() + Environment.NewLine);
@@ -250,6 +291,10 @@ namespace LifeIsHell
                     enemyhealth -= playerdamage;
                     txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
                     currentPlayer.PlayerHealth -= enemyattack;
+                    txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                    txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                    txtMainScreen.AppendText(Environment.NewLine);
+                    ShowPlayerStats();
 
                 }
                 else if (buttonkey == "defend")
@@ -260,6 +305,10 @@ namespace LifeIsHell
                     enemyhealth -= playerdamage;
                     txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);
                     currentPlayer.PlayerHealth -= enemyattack;
+                    txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                    txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                    txtMainScreen.AppendText(Environment.NewLine);
+                    ShowPlayerStats();
                 }
                 else if (buttonkey == "potion")
                 {
@@ -269,6 +318,10 @@ namespace LifeIsHell
                         txtMainScreen.AppendText("You drink the vile tasting liquid." + Environment.NewLine);
                         txtMainScreen.AppendText("You regain " + potionvalue + " health." + Environment.NewLine);
                         currentPlayer.PlayerPotions -= 1;
+                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText(Environment.NewLine);
+                        ShowPlayerStats();
                     }
                     else
                     {
@@ -276,6 +329,10 @@ namespace LifeIsHell
                         txtMainScreen.AppendText("The enemy hits you while you search for a potion." + Environment.NewLine);
                         currentPlayer.PlayerHealth -= enemyattack;
                         txtMainScreen.AppendText("You take " + enemyattack + " damage.");
+                        txtMainScreen.AppendText("Health: " + enemyhealth + Environment.NewLine);
+                        txtMainScreen.AppendText("Power: " + enemyattack + Environment.NewLine);
+                        txtMainScreen.AppendText(Environment.NewLine);
+                        ShowPlayerStats();
                     }
                 }
                 else if (buttonkey == "run")
@@ -287,16 +344,30 @@ namespace LifeIsHell
                         txtMainScreen.AppendText("You fail to escape and the enemy strikes you!");
                         txtMainScreen.AppendText("You take " + enemyattack + " damage.");
                         currentPlayer.PlayerHealth -= enemyattack;
+                        ShowPlayerStats();
 
                     }
                     else
                     {
                         txtMainScreen.AppendText("Your dodgeball skills pay off and you escape.");
-                        
+                        btnAttack.Visible = false;
+                        btnDefend.Visible = false;
+                        btnPotion.Visible = false;
+                        btnRun.Visible = false;
+                        btnExitCombat.Visible = true;
                     }
+                    
+                }
+                else
+                {
+                    
+                    int woncoins = currentPlayer.WinCoins();
+                    txtMainScreen.AppendText("You gain " + woncoins + " coins.");
                 }
             }
+
         }
+
 
         public void ShowPlayerStats()
         {
@@ -511,6 +582,35 @@ namespace LifeIsHell
 
             }
             return "default enemy name. you shouldn't be able to see this.";
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            Combat("attack");
+        }
+
+        private void btnPotion_Click(object sender, EventArgs e)
+        {
+            Combat("potion");
+        }
+
+        private void btnDefend_Click(object sender, EventArgs e)
+        {
+            Combat("defend");
+        }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            Combat("run");
+        }
+
+        private void btnExitCombat_Click(object sender, EventArgs e)
+        {
+            boxCombat.Visible = false;
+            boxDirections.Visible = true;
+            txtMainScreen.Text = "";
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+
         }
     }
 }

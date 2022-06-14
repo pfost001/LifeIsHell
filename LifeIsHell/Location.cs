@@ -19,7 +19,63 @@ namespace LifeIsHell
                 mainScreen.AppendText("This is the location 0, 0.");
                 
             }
-            
+            if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location 1, 0.");
+         
+            }
+            if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location 1, 1.");
+
+            }
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location 0, 1.");
+
+            }
+            if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 0)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location -1, 0.");
+
+            }
+            if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location -1, -1.");
+
+            }
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == -1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location 0, -1.");
+
+            }
+            if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location -1, 1.");
+
+            }
+            if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == -1)
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("This is the location 1, -1.");
+
+            }
+
         }
         public void SearchLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text when using the search button
         {

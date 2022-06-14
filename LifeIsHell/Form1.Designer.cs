@@ -48,8 +48,15 @@
             this.picboxMainScreen = new System.Windows.Forms.PictureBox();
             this.txtMainScreen = new System.Windows.Forms.TextBox();
             this.btnEnterShop = new System.Windows.Forms.Button();
+            this.boxCombat = new System.Windows.Forms.GroupBox();
+            this.btnExitCombat = new System.Windows.Forms.Button();
+            this.btnDefend = new System.Windows.Forms.Button();
+            this.btnPotion = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.btnAttack = new System.Windows.Forms.Button();
             this.boxDirections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxMainScreen)).BeginInit();
+            this.boxCombat.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -314,11 +321,82 @@
             this.btnEnterShop.Visible = false;
             this.btnEnterShop.Click += new System.EventHandler(this.btnEnterShop_Click);
             // 
+            // boxCombat
+            // 
+            this.boxCombat.Controls.Add(this.btnExitCombat);
+            this.boxCombat.Controls.Add(this.btnDefend);
+            this.boxCombat.Controls.Add(this.btnPotion);
+            this.boxCombat.Controls.Add(this.btnRun);
+            this.boxCombat.Controls.Add(this.btnAttack);
+            this.boxCombat.Location = new System.Drawing.Point(570, 624);
+            this.boxCombat.Name = "boxCombat";
+            this.boxCombat.Size = new System.Drawing.Size(445, 200);
+            this.boxCombat.TabIndex = 16;
+            this.boxCombat.TabStop = false;
+            this.boxCombat.Visible = false;
+            // 
+            // btnExitCombat
+            // 
+            this.btnExitCombat.BackColor = System.Drawing.Color.Black;
+            this.btnExitCombat.Location = new System.Drawing.Point(172, 80);
+            this.btnExitCombat.Name = "btnExitCombat";
+            this.btnExitCombat.Size = new System.Drawing.Size(100, 48);
+            this.btnExitCombat.TabIndex = 19;
+            this.btnExitCombat.Text = "Exit";
+            this.btnExitCombat.UseVisualStyleBackColor = false;
+            this.btnExitCombat.Visible = false;
+            this.btnExitCombat.Click += new System.EventHandler(this.btnExitCombat_Click);
+            // 
+            // btnDefend
+            // 
+            this.btnDefend.BackColor = System.Drawing.Color.Black;
+            this.btnDefend.Location = new System.Drawing.Point(115, 81);
+            this.btnDefend.Name = "btnDefend";
+            this.btnDefend.Size = new System.Drawing.Size(100, 48);
+            this.btnDefend.TabIndex = 18;
+            this.btnDefend.Text = "Defend";
+            this.btnDefend.UseVisualStyleBackColor = false;
+            this.btnDefend.Click += new System.EventHandler(this.btnDefend_Click);
+            // 
+            // btnPotion
+            // 
+            this.btnPotion.BackColor = System.Drawing.Color.Black;
+            this.btnPotion.Location = new System.Drawing.Point(233, 81);
+            this.btnPotion.Name = "btnPotion";
+            this.btnPotion.Size = new System.Drawing.Size(100, 48);
+            this.btnPotion.TabIndex = 17;
+            this.btnPotion.Text = "Potion";
+            this.btnPotion.UseVisualStyleBackColor = false;
+            this.btnPotion.Click += new System.EventHandler(this.btnPotion_Click);
+            // 
+            // btnRun
+            // 
+            this.btnRun.BackColor = System.Drawing.Color.Black;
+            this.btnRun.Location = new System.Drawing.Point(172, 135);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(100, 48);
+            this.btnRun.TabIndex = 16;
+            this.btnRun.Text = "Run";
+            this.btnRun.UseVisualStyleBackColor = false;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
+            // btnAttack
+            // 
+            this.btnAttack.BackColor = System.Drawing.Color.Black;
+            this.btnAttack.Location = new System.Drawing.Point(172, 26);
+            this.btnAttack.Name = "btnAttack";
+            this.btnAttack.Size = new System.Drawing.Size(100, 48);
+            this.btnAttack.TabIndex = 15;
+            this.btnAttack.Text = "Attack";
+            this.btnAttack.UseVisualStyleBackColor = false;
+            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
+            // 
             // frmStartGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.boxCombat);
             this.Controls.Add(this.btnEnterShop);
             this.Controls.Add(this.txtMainScreen);
             this.Controls.Add(this.picboxMainScreen);
@@ -339,6 +417,7 @@
             this.Load += new System.EventHandler(this.frmStartGame_Load);
             this.boxDirections.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxMainScreen)).EndInit();
+            this.boxCombat.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +445,11 @@
         public PictureBox picboxMainScreen;
         public TextBox txtMainScreen;
         private Button btnEnterShop;
+        private GroupBox boxCombat;
+        private Button btnDefend;
+        private Button btnPotion;
+        private Button btnRun;
+        private Button btnAttack;
+        private Button btnExitCombat;
     }
 }
