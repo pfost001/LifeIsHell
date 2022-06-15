@@ -328,7 +328,7 @@
             this.boxCombat.Controls.Add(this.btnPotion);
             this.boxCombat.Controls.Add(this.btnRun);
             this.boxCombat.Controls.Add(this.btnAttack);
-            this.boxCombat.Location = new System.Drawing.Point(570, 624);
+            this.boxCombat.Location = new System.Drawing.Point(568, 624);
             this.boxCombat.Name = "boxCombat";
             this.boxCombat.Size = new System.Drawing.Size(445, 200);
             this.boxCombat.TabIndex = 16;
@@ -431,10 +431,6 @@
         private Button btnLoadGame;
         private Button btnIntroContinue;
         private GroupBox boxDirections;
-        private Button btnWest;
-        private Button btnSouth;
-        private Button btnEast;
-        private Button btnNorth;
         private Button btnSearch;
         private Button btnSave;
         private Button btnInteract;
@@ -451,5 +447,9 @@
         private Button btnRun;
         private Button btnAttack;
         private Button btnExitCombat;
+        public Button btnEast;
+        public Button btnWest;
+        public Button btnSouth;
+        public Button btnNorth;
     }
 }

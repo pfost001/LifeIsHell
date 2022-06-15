@@ -31,9 +31,6 @@ namespace LifeIsHell
             shopPlayer = currentPlayer;
             GetStats();
             SetPrices();
-
-
-
         }
 
         private void lblStoreItems_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace LifeIsHell
         {
             InitializeComponent();
             newPlayerName = callerForm;
-            
+                      
         }
 
         private void btnInsertName_Click(object sender, EventArgs e)
@@ -28,6 +28,9 @@ namespace LifeIsHell
             if (!string.IsNullOrEmpty(txtInsertName.Text.Trim()))
             {
                 frmStartGame.currentPlayer.PlayerName = txtInsertName.Text.Trim();
+
+                //Player2 palyer2 = new Player2(txtInsertName.Text.Trim());
+
                 this.Close();
             }
             else
