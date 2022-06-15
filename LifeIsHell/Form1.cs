@@ -342,7 +342,8 @@ namespace LifeIsHell
                     else
                     {
                         txtMainScreen.AppendText("You have won the fight.");
-                        currentPlayer.PlayerCoin += currentPlayer.WinCoins();
+                        woncoins = currentPlayer.WinCoins();
+                        currentPlayer.PlayerCoin += woncoins;
                         txtMainScreen.AppendText("You gain " + woncoins + " coins." + Environment.NewLine);
                         btnAttack.Visible = false;
                         btnDefend.Visible = false;
@@ -371,7 +372,8 @@ namespace LifeIsHell
                     else
                     {
                         txtMainScreen.AppendText("You have won the fight.");
-                        currentPlayer.PlayerCoin += currentPlayer.WinCoins();
+                        woncoins = currentPlayer.WinCoins();
+                        currentPlayer.PlayerCoin += woncoins;
                         txtMainScreen.AppendText("You gain " + woncoins + " coins." + Environment.NewLine);
                         btnAttack.Visible = false;
                         btnDefend.Visible = false;
