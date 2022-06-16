@@ -125,163 +125,169 @@ namespace LifeIsHell
 
 
 
-        
-    }
-    public void SearchLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text when using the search button
-    {
-        if (currentPlayer.PlayerLocY == 0 && currentPlayer.PlayerLocX == 0)
-        {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(GetSearchText());
-        }
-        else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
-        {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(GetSearchText());
-        }
-        else
-        {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(GetSearchText());
-        }
-    }
-    public void TalkLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text applicable to the talk button
-    {
 
-        if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
+        }
+        public void SearchLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text when using the search button
         {
-            if (currentPlayer.CraneOneInteract == false)
+            if (currentPlayer.PlayerLocY == 0 && currentPlayer.PlayerLocX == 0)
             {
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("That person is busy dying repeatedly right now.");
+                mainScreen.AppendText(GetSearchText());
             }
-            else if (currentPlayer.CraneOneInteract == true)
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
             {
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText(Environment.NewLine +
-                    "'Thanks for stopping the crane.'" +
-                    Environment.NewLine +
-                    "'I suppose now I just die of boredom over and over.'" +
-                    Environment.NewLine +
-                    "'That is waaaaaaaaay better.'");
-                currentPlayer.CraneGuyOne = true;
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(GetSearchText());
+            }
+            else
+            {
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(GetSearchText());
             }
         }
-        else
+        public void TalkLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text applicable to the talk button
         {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine); mainScreen.AppendText(GetTalkText());
-        }
 
-    }
-    public void InteractLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text applicable to the Interact button
-    {
-        if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
-        {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText("Don't interact with yourself in public.");
-        }
-        else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
-        {
-            if (currentPlayer.CraneOneInteract == false)
+            if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
+            {
+                if (currentPlayer.CraneOneInteract == false && currentPlayer.CraneGuyOne == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("That person is busy dying repeatedly right now.");
+                }
+                else if (currentPlayer.CraneOneInteract == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine +
+                        "'Thanks for stopping the crane.'" +
+                        Environment.NewLine +
+                        "'I suppose now I just die of boredom over and over.'" +
+                        Environment.NewLine +
+                        "'That is waaaaaaaaay better.'");
+                    currentPlayer.CraneGuyOne = true;
+                }
+                else if (currentPlayer.CraneGuyOne == true && currentPlayer.CraneOneInteract == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("'You are one sick sick puppy!'");
+                }
+            }
+            else
             {
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("You turn the crane off." +
-                    Environment.NewLine +
-                    "'Thank you so much!'");
-                currentPlayer.CraneOneInteract = true;
+                mainScreen.AppendText(Environment.NewLine); mainScreen.AppendText(GetTalkText());
             }
-            else if (currentPlayer.CraneOneInteract == true)
-            {
-                mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("You turn the crane on." +
-                    Environment.NewLine +
-                    "'AAAAHAHAHHAHHHHHHH'" +
-                    Environment.NewLine +
-                    "'WHY!?");
-                currentPlayer.CraneOneInteract = false;
-            }
-        }
-        else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
-        {
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText(Environment.NewLine);
-            mainScreen.AppendText("You do not see anything to interact with.");
-        }
-    }
-    public void Getbuttons(int x, int y) //derived from https://social.msdn.microsoft.com/profile/barry%20wang
-    {
 
-        if (x == 1 && y == 0)
+        }
+        public void InteractLocation(Player currentPlayer, TextBox mainScreen) //this function will check the square and return text applicable to the Interact button
         {
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
             {
-                oForm1.btnEast.Visible = false;
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("Don't interact with yourself in public.");
             }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
             {
-                oForm1.btnWest.Visible = true;
+                if (currentPlayer.CraneOneInteract == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You turn the crane off." +
+                        Environment.NewLine +
+                        "'Thank you so much!'");
+                    currentPlayer.CraneOneInteract = true;
+                }
+                else if (currentPlayer.CraneOneInteract == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You turn the crane on." +
+                        Environment.NewLine +
+                        "'AAAAHAHAHHAHHHHHHH'" +
+                        Environment.NewLine +
+                        "'WHY!?");
+                    currentPlayer.CraneOneInteract = false;
+                }
             }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
             {
-                oForm1.btnNorth.Visible = true;
-            }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
-            {
-                oForm1.btnSouth.Visible = true;
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You do not see anything to interact with.");
             }
         }
-        else if (x == 1 && y == -1)
+        public void Getbuttons(int x, int y) //derived from https://social.msdn.microsoft.com/profile/barry%20wang
         {
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+
+            if (x == 1 && y == 0)
             {
-                oForm1.btnEast.Visible = false;
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
             }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            else if (x == 1 && y == -1)
             {
-                oForm1.btnWest.Visible = true;
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
             }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            else
             {
-                oForm1.btnNorth.Visible = true;
-            }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
-            {
-                oForm1.btnSouth.Visible = true;
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
             }
         }
-        else
+        public static string GetSearchText()
         {
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+            Random rand = new Random();
+            string[] statement =
             {
-                oForm1.btnEast.Visible = true;
-            }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
-            {
-                oForm1.btnWest.Visible = true;
-            }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
-            {
-                oForm1.btnNorth.Visible = true;
-            }
-            foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
-            {
-                oForm1.btnSouth.Visible = true;
-            }
-        }
-    }
-    public static string GetSearchText()
-    {
-        Random rand = new Random();
-        string[] statement =
-        {
                 "You find nothing of interest.",
                 "Nada.",
                 "Zilch.",
@@ -292,13 +298,13 @@ namespace LifeIsHell
                 "You found something!" + Environment.NewLine + "Oh wait. It's nothing.",
                 "Nothing of note."
             };
-        return statement[rand.Next(0, 9)];
-    }
-    public static string GetTalkText()
-    {
-        Random rand = new Random();
-        string[] statement =
+            return statement[rand.Next(0, 9)];
+        }
+        public static string GetTalkText()
         {
+            Random rand = new Random();
+            string[] statement =
+            {
                 "There is no one to talk to.",
                 "You are alone.",
                 "I guess you could talk to yourself.",
@@ -309,11 +315,11 @@ namespace LifeIsHell
                 "Talking to yourself is a sign of dementia.",
                 "Talk to who?."
             };
-        return statement[rand.Next(0, 9)];
+            return statement[rand.Next(0, 9)];
+        }
+
+
+
+
     }
-
-
-
-
-}
 }
