@@ -50,8 +50,8 @@ namespace LifeIsHell
                         "There is a lake of fire to your East.");
 
                 }
-            }
 
+            }
             if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
@@ -97,7 +97,7 @@ namespace LifeIsHell
                     {
                         mainScreen.AppendText(Environment.NewLine);
                         mainScreen.AppendText(Environment.NewLine);
-                        mainScreen.AppendText("This is the location 0, -1.");
+                        mainScreen.AppendText("You are near the center of Hell" + Environment.NewLine + "Tom's Gift Shop is to your North");
 
                     }
                 }
@@ -119,7 +119,9 @@ namespace LifeIsHell
                         mainScreen.AppendText("You are near the center of Hell." + Environment.NewLine + "There is a lake of fire to your East.");
                     }
                 }
-                
+
+
+
 
             }
         }
@@ -234,7 +236,7 @@ namespace LifeIsHell
                     oForm1.btnSouth.Visible = true;
                 }
             }
-            if (x == 1 && y == -1)
+            else if (x == 1 && y == -1)
             {
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {
@@ -253,7 +255,7 @@ namespace LifeIsHell
                     oForm1.btnSouth.Visible = true;
                 }
             }
-            if (x == 0 && y == 0)
+            else
             {
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {
