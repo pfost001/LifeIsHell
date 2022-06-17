@@ -25,6 +25,8 @@ namespace LifeIsHell
         public int PlayerMaxHealth = 10;
         public bool CraneOneInteract = false;
         public bool CraneGuyOne = false;
+        public bool ChestOneOpen = false;
+        public bool KeyOne = false;
 
         public int EnemyPower()
         {

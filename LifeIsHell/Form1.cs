@@ -50,7 +50,12 @@ namespace LifeIsHell
             txtIntroText.Visible = true;
             btnIntroContinue.Visible = true;          
             
-            txtIntroText.Text = "You awake to screaming all around you." + Environment.NewLine;
+            txtIntroText.Text = Environment.NewLine 
+                + "You awake to screaming all around you." 
+                + Environment.NewLine
+                + "You are surrounded by fire and winged creatures fly through the sky."
+                + Environment.NewLine
+                + "The smell of smoke and blood fills your nostrils.";
             //txtIntroText.AppendText("You are surrounded by fire and winged creatures fly through the sky." + Environment.NewLine);
             //txtIntroText.AppendText("'Hello' you hear from behind you.");
            // firstText = true;           
@@ -59,20 +64,47 @@ namespace LifeIsHell
         public string[] text =
         {
             //"You awake to screaming all around you.",
-            "You are surrounded by fire and winged creatures fly through the sky.",
-            "'Hello' you hear from behind you.",
-            "You turn around and see the Devil.",
-            "Not a devil, the actual Devil",
-            //"This is the third intro text.",
-            //"This is the final text.",
-            "Welcome to Hell, Hahahaha...",
-                ""
+            Environment.NewLine
+                + Environment.NewLine
+                + "'Hello' you hear from behind you.",
+            Environment.NewLine
+                + Environment.NewLine
+                + "You turn around and see the Devil." 
+                + Environment.NewLine
+                + "Not a devil, but THE Devil"
+                + Environment.NewLine
+                + "You stare in disbelief",
+            Environment.NewLine
+                + Environment.NewLine
+                + "'Yeah I get that alot.'"
+                + Environment.NewLine
+                + "'Don't worry, you didn't make it to heaven but you were not THAT bad.'"
+                + Environment.NewLine
+                + "'So while you are in Hell you are free to roam about.'"
+                + Environment.NewLine
+                + "But there are some things you should know.'",
+            Environment.NewLine
+                + "'You are going to have to fight to survive, here is a sword and shield.'"
+                + Environment.NewLine
+                + "'Don't worry too much. If you die, you'll be reborn right here.'"
+                + Environment.NewLine
+                + "'And every time you do die I get a little bump of endorphins.'" 
+                + Environment.NewLine
+                + "'It's pretty great.'",
+            Environment.NewLine
+                + "'Have fun and I hope you die many many times.'"
+                + Environment.NewLine
+                + "'OH!' I almost forgot, there is a gift shop right here as well where you can spend your coins.'" 
+                + Environment.NewLine
+                + "The devil tosses you a sort of half ass salute and walks off.",
+            "",
+            
         };
         public int i = 0;
         private void btnIntroContinue_Click(object sender, EventArgs e)
         {
             PrintIntroText();
-            txtIntroText.AppendText(text[i]+ Environment.NewLine); //= text[i] +Environment.NewLine;
+            txtIntroText.Text = text[i]+ Environment.NewLine; //= text[i] +Environment.NewLine;
             i++;
         }
         public void PrintIntroText() //this function provides the intro text when the continue button is pressed.
@@ -87,7 +119,21 @@ namespace LifeIsHell
                 txtMainScreen.Visible = true;
                 picboxMainScreen.Visible = true;
                 boxDirections.Visible = true;
-                txtMainScreen.Text = "Welcome to Hell " + currentPlayer.PlayerName;
+                txtMainScreen.Text = "Welcome to Hell " + currentPlayer.PlayerName + "!"
+                    + Environment.NewLine
+                    + "Use the N, S, E, and W buttons to move around."
+                    + Environment.NewLine
+                    + "When fighting, use the attack button to make an all in attack."
+                    + Environment.NewLine
+                    + "The defend button will cause you to enter a defense fighting stance."
+                    + Environment.NewLine
+                    + "The potion button will dring a potion to restore your health."
+                    + Environment.NewLine
+                    + "And if all else fails you can try to escape the fight with the run button."
+                    + Environment.NewLine
+                    + "Use the search, interact, and talk buttons while exploring."
+                    + Environment.NewLine
+                    + "Have fun and enjoy your life in Hell!";
                 btnEnterShop.Visible = true;
 
                 location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
