@@ -129,7 +129,7 @@
             // txtIntroText
             // 
             this.txtIntroText.BackColor = System.Drawing.Color.Black;
-            this.txtIntroText.Font = new System.Drawing.Font("Impact", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtIntroText.Font = new System.Drawing.Font("Candara Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIntroText.ForeColor = System.Drawing.Color.White;
             this.txtIntroText.Location = new System.Drawing.Point(296, 79);
             this.txtIntroText.Multiline = true;
@@ -299,6 +299,8 @@
             // 
             // txtMainScreen
             // 
+            this.txtMainScreen.BackColor = System.Drawing.Color.White;
+            this.txtMainScreen.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMainScreen.Location = new System.Drawing.Point(792, 16);
             this.txtMainScreen.Multiline = true;
             this.txtMainScreen.Name = "txtMainScreen";

@@ -54,6 +54,7 @@ namespace LifeIsHell
         {
             lblNoMoney.Visible = false;
             CheckCoin("armor", armorprice);
+           
 
         }
 
@@ -61,24 +62,28 @@ namespace LifeIsHell
         {
             lblNoMoney.Visible = false;
             CheckCoin("weapon", weaponprice);
+         
         }
 
         private void btnBuyHealth_Click(object sender, EventArgs e)
         {
             lblNoMoney.Visible = false;
             CheckCoin("health", healthprice);
+           
         }
 
         private void btnBuyPotion_Click(object sender, EventArgs e)
         {
             lblNoMoney.Visible = false;
             CheckCoin("potion", potionprice);
+          
         }
 
         private void btnBuyDiff_Click(object sender, EventArgs e)
         {
             lblNoMoney.Visible = false;
             CheckCoin("diff", diffprice);
+            GetStats();
         }
         private void CompileStats()
         {
@@ -104,9 +109,9 @@ namespace LifeIsHell
 
         public void CalcPrices()
         {
-            armorprice = shopPlayer.PlayerArmor * 100;
+            armorprice = shopPlayer.PlayerArmor * 50;
             weaponprice = shopPlayer.PlayerAttack * 50;
-            healthprice = shopPlayer.PlayerHealth * 10;
+            healthprice = shopPlayer.PlayerMaxHealth * 10;
             potionprice = 25;
             diffprice = shopPlayer.GameDiff * 25;
         }
@@ -121,22 +126,27 @@ namespace LifeIsHell
                 if (item == "diff")
                 {
                     shopPlayer.GameDiff++;
+                    shopPlayer.PlayerCoin -= price;
                 }
                 else if (item == "weapon")
                 {
                     shopPlayer.PlayerAttack++;
+                    shopPlayer.PlayerCoin -= price;
                 }
                 else if (item == "armor")
                 {
                     shopPlayer.PlayerArmor++;
+                    shopPlayer.PlayerCoin -= price;
                 }
                 else if (item == "potion")
                 {
                     shopPlayer.PlayerPotions++;
+                    shopPlayer.PlayerCoin -= price;
                 }
                 else if (item == "health")
                 {
                     shopPlayer.PlayerMaxHealth++;
+                    shopPlayer.PlayerCoin -= price;
                 }
             }
             GetStats();

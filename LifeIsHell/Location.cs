@@ -154,9 +154,17 @@ namespace LifeIsHell
                         
                 }
             }
-
-
-
+            if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == 1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are near the center of Hell."
+                    + Environment.NewLine
+                    + "There is a bottomless pit to your South."
+                    + Environment.NewLine
+                    + "People are being dropped into the pit from above.");
+            }
 
 
         }
@@ -359,6 +367,25 @@ namespace LifeIsHell
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {
                     oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -2 && y == 1)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
                 }
             }
             else

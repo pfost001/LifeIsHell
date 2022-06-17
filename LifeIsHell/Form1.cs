@@ -51,10 +51,11 @@ namespace LifeIsHell
             btnIntroContinue.Visible = true;          
             
             txtIntroText.Text = Environment.NewLine 
+                + Environment.NewLine
                 + "You awake to screaming all around you." 
                 + Environment.NewLine
                 + "You are surrounded by fire and winged creatures fly through the sky."
-                + Environment.NewLine
+                + Environment.NewLine 
                 + "The smell of smoke and blood fills your nostrils.";
             //txtIntroText.AppendText("You are surrounded by fire and winged creatures fly through the sky." + Environment.NewLine);
             //txtIntroText.AppendText("'Hello' you hear from behind you.");
@@ -84,6 +85,7 @@ namespace LifeIsHell
                 + Environment.NewLine
                 + "But there are some things you should know.'",
             Environment.NewLine
+                + Environment.NewLine
                 + "'You are going to have to fight to survive, here is a sword and shield.'"
                 + Environment.NewLine
                 + "'Don't worry too much. If you die, you'll be reborn right here.'"
@@ -92,6 +94,7 @@ namespace LifeIsHell
                 + Environment.NewLine
                 + "'It's pretty great.'",
             Environment.NewLine
+                + Environment.NewLine
                 + "'Have fun and I hope you die many many times.'"
                 + Environment.NewLine
                 + "'OH!' I almost forgot, there is a gift shop right here as well where you can spend your coins.'" 
@@ -230,6 +233,7 @@ namespace LifeIsHell
             currentPlayer.PlayerLocX--;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
+
             if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
             {
                 location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);

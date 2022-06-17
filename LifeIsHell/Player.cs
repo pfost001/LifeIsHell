@@ -12,10 +12,10 @@ namespace LifeIsHell
         public Random rand = new Random();
         public string PlayerName = "";
         public int SaveCounter = 0;
-        public int PlayerCoin = 10;
+        public int PlayerCoin = 1000;
         public int PlayerLocX = 0;
         public int PlayerLocY = 0;
-        public int PlayerAttack = 1;
+        public int PlayerAttack = 2;
         public int PlayerHealth = 10;
         public int PlayerArmor = 1;
         public int GameDiff = 1;
