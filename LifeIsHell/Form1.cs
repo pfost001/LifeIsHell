@@ -74,7 +74,7 @@ namespace LifeIsHell
                 + Environment.NewLine
                 + "Not a devil, but THE Devil"
                 + Environment.NewLine
-                + "You stare in disbelief",
+                + "You stare in disbelief.",
             Environment.NewLine
                 + Environment.NewLine
                 + "'Yeah I get that alot.'"
@@ -128,9 +128,9 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "When fighting, use the attack button to make an all in attack."
                     + Environment.NewLine
-                    + "The defend button will cause you to enter a defense fighting stance."
+                    + "The defend button will cause you to enter a defensive fighting stance."
                     + Environment.NewLine
-                    + "The potion button will dring a potion to restore your health."
+                    + "The potion button will drink a potion to restore your health."
                     + Environment.NewLine
                     + "And if all else fails you can try to escape the fight with the run button."
                     + Environment.NewLine
@@ -184,15 +184,7 @@ namespace LifeIsHell
             currentPlayer.PlayerLocY++;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            }
-            else
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-                RandomEncounterGen();
-            }
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
         private void btnEast_Click(object sender, EventArgs e)
@@ -200,15 +192,7 @@ namespace LifeIsHell
             currentPlayer.PlayerLocX++;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            }
-            else
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-                RandomEncounterGen();
-            }
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
 
@@ -217,15 +201,7 @@ namespace LifeIsHell
             currentPlayer.PlayerLocY--;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            }
-            else
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-                RandomEncounterGen();
-            }
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
         private void btnWest_Click(object sender, EventArgs e)
@@ -233,16 +209,7 @@ namespace LifeIsHell
             currentPlayer.PlayerLocX--;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             CheckShop();
-
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            }
-            else
-            {
-                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-                RandomEncounterGen();
-            }
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
         private void boxDirections_Enter(object sender, EventArgs e)
@@ -409,6 +376,11 @@ namespace LifeIsHell
                     int playerdamage = currentPlayer.DefendCalc();
                     txtMainScreen.AppendText("You deal " + playerdamage + " damage." + Environment.NewLine);
                     enemyhealth -= playerdamage;
+                    enemyattack -= currentPlayer.PlayerArmor;
+                    if (enemyattack < 0)
+                    {
+                        enemyattack = 0;
+                    }
                     if (enemyhealth > 0)
                     {
                         txtMainScreen.AppendText("You take " + enemyattack + " damage." + Environment.NewLine);

@@ -27,6 +27,9 @@ namespace LifeIsHell
         public bool CraneGuyOne = false;
         public bool ChestOneOpen = false;
         public bool KeyOne = false;
+        public bool FireChaliceOwn = false;
+        public bool FireChaliceFull = false;
+        public bool FireChalicePour = false;
 
         public int EnemyPower()
         {
