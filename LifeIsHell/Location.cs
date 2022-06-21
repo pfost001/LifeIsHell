@@ -10,9 +10,8 @@ namespace LifeIsHell
     {
         Random rand = new Random();
 
-        private frmStartGame frmStartGame;
-
-
+        public frmStartGame frmStartGame;
+        
         public void PlayerLocation(Player currentPlayer, TextBox mainScreen, PictureBox mainPicture) //this function will load the text and pictures for each block location
         {
             if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
@@ -28,7 +27,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 0)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 if (currentPlayer.CraneOneInteract == false)
                 {
                     mainScreen.AppendText(Environment.NewLine);
@@ -43,7 +42,7 @@ namespace LifeIsHell
                         "There is a lake of fire to your East.");
 
                 }
-                else if (currentPlayer.CraneOneInteract == true && currentPlayer.CraneGuyOne == false)
+                else if (currentPlayer.CraneOneInteract == true)
                 {
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine +
@@ -56,7 +55,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell." + Environment.NewLine + "There is a lake of fire to your Southeast.");
@@ -66,7 +65,7 @@ namespace LifeIsHell
             {
 
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are near the center of Hell."
@@ -77,7 +76,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 0)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You stand on the edge of a bottomless pit."
@@ -91,7 +90,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are near the center of Hell"
@@ -104,7 +103,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == -1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are near the center of Hell"
@@ -118,7 +117,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -129,7 +128,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == -1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell." + Environment.NewLine + "There is a lake of fire to your East.");
@@ -138,7 +137,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == -2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 if (currentPlayer.ChestOneOpen == false && currentPlayer.KeyOne == false)
@@ -160,7 +159,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -172,7 +171,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == 2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
@@ -180,7 +179,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == 2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
@@ -188,7 +187,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 3 && currentPlayer.PlayerLocY == 2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -202,7 +201,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == 2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
@@ -210,7 +209,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."+
@@ -220,7 +219,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 3 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -232,7 +231,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == 1)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
@@ -240,7 +239,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == 0)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell." + Environment.NewLine + "There is a lake of fire to your West.");
@@ -248,7 +247,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == 0)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell." + Environment.NewLine + "There is a lake of fire to your West.");
@@ -256,7 +255,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == -2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
@@ -264,7 +263,7 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == -3)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -274,15 +273,15 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 3 && currentPlayer.PlayerLocY == -3)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell.");
             }
-            else if (currentPlayer.PlayerLocX == 3 && currentPlayer.PlayerLocY == -2)
+            else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == -2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
@@ -292,17 +291,74 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 3 && currentPlayer.PlayerLocY == -2)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
                     + Environment.NewLine
                     + "There is a lake of fire to your North.");
             }
+            else if (currentPlayer.PlayerLocX == 4 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There is a lake of fire to your West");
+            }
+            else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 1 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see something glinting in the firelight to your West.");
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see something glinting in the firelight to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see something glinting in the firelight to your East.");
+            }
+            
             else
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
-                frmStartGame.RandomEncounterGen();
+                
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("I haven't programmed this square yet.");

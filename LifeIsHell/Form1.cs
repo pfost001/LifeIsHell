@@ -15,10 +15,10 @@ namespace LifeIsHell
         //bool allText = false;
         public static Player currentPlayer = new Player();
         public static Location location = new Location();
-        string enemyname;
-        int enemyhealth;
-        int enemyattack;
-        int woncoins;
+        string enemyname = "";
+        int enemyhealth = 0;
+        int enemyattack = 0;
+        int woncoins = 0;
 
         public frmStartGame()
         {
@@ -183,7 +183,8 @@ namespace LifeIsHell
         {
             currentPlayer.PlayerLocY++;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            CheckShop();
+            //CheckShop();
+            RandomEncounterGen();
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
@@ -191,7 +192,8 @@ namespace LifeIsHell
         {
             currentPlayer.PlayerLocX++;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            CheckShop();
+            //CheckShop();
+            RandomEncounterGen();
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
@@ -200,7 +202,8 @@ namespace LifeIsHell
         {
             currentPlayer.PlayerLocY--;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            CheckShop();
+            //CheckShop();
+            RandomEncounterGen();
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
@@ -208,7 +211,8 @@ namespace LifeIsHell
         {
             currentPlayer.PlayerLocX--;
             //location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
-            CheckShop();
+            //CheckShop();
+            RandomEncounterGen();
             location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
         }
 
@@ -235,7 +239,7 @@ namespace LifeIsHell
         private void btnInteract_Click(object sender, EventArgs e)
         {
             location.InteractLocation(currentPlayer, txtMainScreen);
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -273,32 +277,41 @@ namespace LifeIsHell
             Shop shopForm = new Shop(currentPlayer);
             shopForm.ShowDialog();
         }
-        public void CheckShop()
+        //public void CheckShop()
+        //{
+        //    if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+        //    {
+        //        btnEnterShop.Visible = true;
+        //    }
+        //    else
+        //        btnEnterShop.Visible = false;
+        //}
+        public void RandomEncounterGen()
         {
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0) 
             {
                 btnEnterShop.Visible = true;
             }
+
             else
-                btnEnterShop.Visible = false;
-        }
-        public void RandomEncounterGen()
-        {
-            int fightCheck = rand.Next(0, 1000);
-            switch (fightCheck)
             {
-                case < 330:
-                    boxDirections.Visible = false;
-                    boxCombat.Visible = true;
-                    btnAttack.Visible = true;
-                    btnDefend.Visible = true;
-                    btnPotion.Visible = true;
-                    btnExitCombat.Visible = false;
-                    btnRun.Visible = true;
-                    RandomEncounter();
-                    break;
-                case > 330:
-                    break;
+                int fightCheck = rand.Next(0, 1000);
+                btnEnterShop.Visible = false;
+                switch (fightCheck)
+                {
+                    case < 330:
+                        boxDirections.Visible = false;
+                        boxCombat.Visible = true;
+                        btnAttack.Visible = true;
+                        btnDefend.Visible = true;
+                        btnPotion.Visible = true;
+                        btnExitCombat.Visible = false;
+                        btnRun.Visible = true;
+                        RandomEncounter();
+                        break;
+                    case > 330:
+                        break;
+                }
 
             }
         }
