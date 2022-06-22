@@ -344,7 +344,23 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "You see something glinting in the firelight to your East.");
             }
-            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -2)
+            else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -3)
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
 
@@ -352,9 +368,136 @@ namespace LifeIsHell
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText("You are in central Hell."
                     + Environment.NewLine
-                    + "You see something glinting in the firelight to your East.");
+                    + "You see a tower rising above the horizon to your Southwest.");
             }
-            
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your South.");
+            }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your Southeast."
+                    + Environment.NewLine
+                    + "There is a stone wall to your North.");
+            }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == -4)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in southern Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == -5)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in southern Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your Northeast.");
+            }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -5)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in southern Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your North.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -5)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in southern Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your Northwest.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -4)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "You see a tower rising above the horizon to your West."
+                    + Environment.NewLine
+                    + "There is a river of fire to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There is a sign to your North."
+                    + Environment.NewLine
+                    + "There is a stone wall to your West.");
+            }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There is a sign that says 'Petting Zoo' and an arrow points West.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There is a bottomless pit to your North."
+                    + Environment.NewLine
+                    + "There is a sign to your West.");
+            }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == 0)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There is a bottomless pit to your East."
+                    + Environment.NewLine
+                    + "There is a stone wall to your West.");
+            }
             else
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
@@ -556,6 +699,25 @@ namespace LifeIsHell
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText("You don't think you need any more liquid fire.");
+                }
+            }
+            else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == -2)
+            {
+                if (currentPlayer.RedOrbUp == false && currentPlayer.RedOrbInserted == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You find a red orb laying on the ground."
+                        + Environment.NewLine
+                        + "It is roughly the size of a golfball."
+                        + Environment.NewLine
+                        + "You pick it up.");
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetInteractText());
                 }
             }
             else
@@ -828,6 +990,139 @@ namespace LifeIsHell
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {
                     oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == 0 && y == -3)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -1 && y == -3)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -4 && y == -3)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -4 && y == -4)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -4 && y == -5)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -3 && y == -5)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -2 && y == -4)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
                 }
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {

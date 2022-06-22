@@ -30,6 +30,8 @@ namespace LifeIsHell
         public bool FireChaliceOwn = false;
         public bool FireChaliceFull = false;
         public bool FireChalicePour = false;
+        public bool RedOrbUp = false;
+        public bool RedOrbInserted = false;
 
         public int EnemyPower()
         {

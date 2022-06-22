@@ -64,12 +64,13 @@
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Impact", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTitle.Location = new System.Drawing.Point(568, 280);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(436, 228);
+            this.lblTitle.Size = new System.Drawing.Size(449, 117);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Life is Hell";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,7 +132,7 @@
             this.txtIntroText.BackColor = System.Drawing.Color.Black;
             this.txtIntroText.Font = new System.Drawing.Font("Candara Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIntroText.ForeColor = System.Drawing.Color.White;
-            this.txtIntroText.Location = new System.Drawing.Point(296, 79);
+            this.txtIntroText.Location = new System.Drawing.Point(296, 89);
             this.txtIntroText.Multiline = true;
             this.txtIntroText.Name = "txtIntroText";
             this.txtIntroText.ReadOnly = true;
@@ -301,7 +302,7 @@
             // 
             this.txtMainScreen.BackColor = System.Drawing.Color.White;
             this.txtMainScreen.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMainScreen.Location = new System.Drawing.Point(792, 16);
+            this.txtMainScreen.Location = new System.Drawing.Point(801, 16);
             this.txtMainScreen.Multiline = true;
             this.txtMainScreen.Name = "txtMainScreen";
             this.txtMainScreen.ReadOnly = true;
