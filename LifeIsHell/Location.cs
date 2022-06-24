@@ -46,8 +46,9 @@ namespace LifeIsHell
                 {
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine +
-                        "There is a crane with a person in a cage over a lake of lava." + Environment.NewLine +
-                        "There is a lake of fire to your East.");
+                        "There is a crane with a person in a cage over a lake of lava." 
+                        + Environment.NewLine 
+                        + "There is a lake of fire to your East.");
 
                 }
 
@@ -58,7 +59,9 @@ namespace LifeIsHell
                 
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText("You are in central Hell." + Environment.NewLine + "There is a lake of fire to your Southeast.");
+                mainScreen.AppendText("You are in central Hell." 
+                    + Environment.NewLine 
+                    + "There is a lake of fire to your Southeast.");
 
             }
             else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 1)
@@ -498,6 +501,241 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "There is a stone wall to your West.");
             }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == 0)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There is a stone wall to your North and East.");
+            }
+            else if (currentPlayer.PlayerLocX == -5 && currentPlayer.PlayerLocY == 0)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There is a stone wall to your North.");
+            }
+            else if (currentPlayer.PlayerLocX == -6 && currentPlayer.PlayerLocY == 0)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Monkeys with swords hop around decapating people."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself."
+                    + Environment.NewLine
+                    + "There is a stone wall to your North and West.");
+            }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Undying killer bees swarm all over the people, stinging them to death."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself."
+                    + Environment.NewLine);
+            }
+            else if (currentPlayer.PlayerLocX == -5 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Roaches crawl all over the people, entering their mouths and suffocating them."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself.");
+            }
+            else if (currentPlayer.PlayerLocX == -6 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Snakes crawl all over the people, biting them repeatedly until they die."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself."
+                    + Environment.NewLine
+                    + "There is a stone wall to your West.");
+            }
+            else if (currentPlayer.PlayerLocX == -6 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There is a stone wall to your South and West.");
+            }
+            else if (currentPlayer.PlayerLocX == -5 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Spiders cover the skin of their victims while biting them to death."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself."
+                    + Environment.NewLine
+                    + "There is a stone wall to your South.");
+            }
+            else if (currentPlayer.PlayerLocX == -4 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in the petting zoo."
+                    + Environment.NewLine
+                    + "There are people tied to posts scattered through the area."
+                    + Environment.NewLine
+                    + "Ants swarm over the people, slowly biting them to death."
+                    + Environment.NewLine
+                    + "The people are then reborn for the process to repeat itself."
+                    + Environment.NewLine
+                    + "There is a stone wall to your South and East.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == 2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == 2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == 3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in northern Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in northern Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in northern Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == 2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There see large spikes sticking out of the ground to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == 1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There see large spikes sticking out of the ground to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == 0)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There see large spikes sticking out of the ground to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == -1)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell."
+                    + Environment.NewLine
+                    + "There see large spikes sticking out of the ground to your East.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == -2)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
+            else if (currentPlayer.PlayerLocX == 5 && currentPlayer.PlayerLocY == -3)
+            {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
+
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText(Environment.NewLine);
+                mainScreen.AppendText("You are in central Hell.");
+            }
             else
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
@@ -538,6 +776,86 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "Despite the name, the cup is empty.");
                 currentPlayer.FireChaliceOwn = true;
+            }
+            else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == -2)
+            {
+                if (currentPlayer.RedOrbUp == false && currentPlayer.RedOrbInserted == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You find a red orb laying on the ground."
+                        + Environment.NewLine
+                        + "It is roughly the size of a golfball."
+                        + Environment.NewLine
+                        + "You pick it up.");
+                    currentPlayer.RedOrbUp = true;
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetSearchText());
+                }
+            }
+            else if (currentPlayer.PlayerLocX == -1 && currentPlayer.PlayerLocY == 2)
+            {
+                if (currentPlayer.BlueOrbUp == false && currentPlayer.BlueOrbInserted == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You find a blue orb laying on the ground."
+                        + Environment.NewLine
+                        + "It is roughly the size of a golfball."
+                        + Environment.NewLine
+                        + "You pick it up.");
+                    currentPlayer.BlueOrbUp = true;
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetSearchText());
+                }
+            }
+            else if (currentPlayer.PlayerLocX == -5 && currentPlayer.PlayerLocY == 0)
+            {
+                if (currentPlayer.PurpleOrbUp == false && currentPlayer.PurpleOrbInserted == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You find a purple orb laying on the ground."
+                        + Environment.NewLine
+                        + "It is roughly the size of a golfball."
+                        + Environment.NewLine
+                        + "You pick it up.");
+                    currentPlayer.PurpleOrbUp = true;
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetSearchText());
+                }
+            }
+            else if (currentPlayer.PlayerLocX == -5 && currentPlayer.PlayerLocY == 0)
+            {
+                if (currentPlayer.GreenOrbUp == false && currentPlayer.GreenOrbInserted == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You find a green orb laying on the ground."
+                        + Environment.NewLine
+                        + "It is roughly the size of a golfball."
+                        + Environment.NewLine
+                        + "You pick it up.");
+                    currentPlayer.GreenOrbUp = true;
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetSearchText());
+                }
             }
             else
             {
@@ -701,25 +1019,7 @@ namespace LifeIsHell
                     mainScreen.AppendText("You don't think you need any more liquid fire.");
                 }
             }
-            else if (currentPlayer.PlayerLocX == 2 && currentPlayer.PlayerLocY == -2)
-            {
-                if (currentPlayer.RedOrbUp == false && currentPlayer.RedOrbInserted == false)
-                {
-                    mainScreen.AppendText(Environment.NewLine);
-                    mainScreen.AppendText(Environment.NewLine);
-                    mainScreen.AppendText("You find a red orb laying on the ground."
-                        + Environment.NewLine
-                        + "It is roughly the size of a golfball."
-                        + Environment.NewLine
-                        + "You pick it up.");
-                }
-                else
-                {
-                    mainScreen.AppendText(Environment.NewLine);
-                    mainScreen.AppendText(Environment.NewLine);
-                    mainScreen.AppendText(GetInteractText());
-                }
-            }
+           
             else
             {
                 mainScreen.AppendText(Environment.NewLine);
@@ -1129,6 +1429,234 @@ namespace LifeIsHell
                     oForm1.btnSouth.Visible = true;
                 }
             }
+            else if (x == -3 && y == -2)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -6 && y == -1)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -6 && y == 0)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -5 && y == 0)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -4 && y == 0)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -6 && y == -2)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -5 && y == -2)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -4 && y == -2)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = false;
+                }
+            }
+            else if (x == -2 && y == -1)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -2 && y == 2)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -2 && y == 3)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = true;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
+            else if (x == -3 && y == 0)
+            {
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnEast.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnWest.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnNorth.Visible = false;
+                }
+                foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
+                {
+                    oForm1.btnSouth.Visible = true;
+                }
+            }
             else
             {
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
@@ -1182,6 +1710,252 @@ namespace LifeIsHell
                 "Talk to who?."
             };
             return statement[rand.Next(0, 9)];
+        }
+        public static string SpikeFieldTalk()
+        {
+            Random rand = new Random();
+            string[] statement =
+            {
+                "Please help me.",
+                "Kill me please.",
+                "I just want to die.",
+                "Arrrgh!",
+                "Ahhhhhh!",
+                "It hurts so bad.",
+                "So. Much. Pain.",
+                "Help me.",
+                "Help me, please.",
+                "Kill me!",
+                "Water...I need water...",
+                "*cries softly*",
+                "Help! Please help!",
+                "Just kill me.",
+                "Just kill me please.",
+                "Why...why...",
+                "Water...please...",
+                "I don't deserve this.",
+                "*whimpers quietly*",
+                "99 bottles of beer on the wall, 99 bottles of beer!"
+
+            };
+            return statement[rand.Next(0, 20)];
+        }
+        public string PunishmentPoster()
+        {
+            Random rand = new Random();
+            List<string> statement = new List<string>()
+            { 
+                Environment.NewLine 
+                + "Why do chicken coops have two doors?"
+                + Environment.NewLine
+                + "Because if they had four doors they would be chicken sedans!",
+
+                Environment.NewLine
+                + "I don't trust stairs."
+                + Environment.NewLine
+                + "They're always up to something.",
+
+                Environment.NewLine
+                + "Why couldn't the bicycle stand on its own?"
+                + Environment.NewLine
+                + "Because it was too tired.",
+
+                Environment.NewLine
+                + "Why can't a nose be twelve inches long?"
+                + Environment.NewLine
+                +"Because then it would be a foot.",
+
+                Environment.NewLine
+                + "How do you get a squirrel to like you?"
+                + Environment.NewLine
+                + "Act like you are nuts.",
+                //5
+
+                Environment.NewLine
+                + "Did you hear about the circus fire?"
+                + Environment.NewLine
+                + "It was in tents.",
+
+                Environment.NewLine
+                + "I hate Russian dolls."
+                + Environment.NewLine
+                + "They're so full of themselves.",
+
+                Environment.NewLine
+                + "What do you call a boomerang that never comes back?"
+                + Environment.NewLine
+                + "A stick.",
+
+                Environment.NewLine
+                + "What did ythe pirate say on his 80th birthday?"
+                + Environment.NewLine
+                + "Aye matey!",
+
+                Environment.NewLine
+                + "I made a pencil with two erasers."
+                + Environment.NewLine
+                + "It was pointless.",
+                //10
+
+                Environment.NewLine
+                + "What's an astronaut's favorite part of a computer?"
+                + Environment.NewLine
+                + "The space bar.",
+
+                Environment.NewLine
+                + "Two cannibals are eating a clown."
+                + Environment.NewLine
+                + "One says to the other, 'Does this taste funny to you?'",
+
+                Environment.NewLine
+                + "What did the drummer call his two twin daughters?"
+                + Environment.NewLine
+                + "Anna one, anna two.",
+
+                Environment.NewLine
+                + "What do you call a crab that plays baseball?"
+                + Environment.NewLine
+                + "A pinch hitter.",
+
+                Environment.NewLine
+                + "What does a nosy pepper do?"
+                + Environment.NewLine
+                + "It gets jalapeno buisness.",
+                //15
+
+                Environment.NewLine
+                + "How do you make a tissue dance?"
+                + Environment.NewLine
+                + "Put a little boogey in it.",
+
+                Environment.NewLine
+                + "Why are there gates around cemetaries?"
+                + Environment.NewLine
+                + "People are dying to get in.",
+
+                Environment.NewLine
+                + "I just went to an emotional wedding."
+                + Environment.NewLine
+                + "Even the cake was in tiers.",
+
+                Environment.NewLine
+                + "Two peanuts were walking down the street."
+                + Environment.NewLine
+                + "One of them was a salted.",
+
+                Environment.NewLine
+                + "What is a ninja's favorite type of shoe?"
+                + Environment.NewLine
+                + "Sneakers.",
+                //20
+
+                Environment.NewLine
+                + "What did the fish say when it swam into a wall?"
+                + Environment.NewLine
+                + "Dam.",
+
+                Environment.NewLine
+                + "When's the best time to go to the dentist?"
+                + Environment.NewLine
+                + "Tooth-hurtie.",
+
+                Environment.NewLine
+                + "Did you hear the rumor about butter?"
+                + Environment.NewLine
+                + "Never mind. I shouldn't spread it.",
+
+                Environment.NewLine
+                + "What does a baby computer call its father?"
+                + Environment.NewLine
+                + "Data.",
+
+                Environment.NewLine
+                + "Last night I dreamed I was a muffler."
+                + Environment.NewLine
+                + "I woke up exhausted.",
+                //25
+
+                Environment.NewLine
+                + "I was sitting in traffic the other day."
+                + Environment.NewLine
+                + "It's probably why I got run over.",
+
+                Environment.NewLine
+                + "How do you cathc a bra?"
+                + Environment.NewLine
+                + "With a booby trap.",
+
+                Environment.NewLine
+                + "Why did the crab refuse to donate to charity?"
+                + Environment.NewLine
+                + "He's shellfish.",
+
+                Environment.NewLine
+                + "If you have a bladder infection, urine trouble.",
+
+                Environment.NewLine
+                + "What did one plate say to the other?"
+                + Environment.NewLine
+                + "Lunch is on me.",
+                //30
+
+                Environment.NewLine
+                + "Why did the scarecrow win an award?"
+                + Environment.NewLine
+                + "He was outstanding in his field.",
+
+                Environment.NewLine
+                + "What did the clock do when it was hungry?"
+                + Environment.NewLine
+                + "It went back four seconds.",
+
+                Environment.NewLine
+                + "Why do fish live in saltwater?"
+                + Environment.NewLine
+                + "Pepper makes them sneeze.",
+
+                Environment.NewLine
+                + "How many ears does spock have?"
+                + Environment.NewLine
+                + "Three: left ear, right ear and the final front-ear.",
+
+                Environment.NewLine
+                + "I sold my vacuum the other day."
+                + Environment.NewLine
+                + "It was just collecting dust.",
+                //35
+
+                Environment.NewLine
+                + "Why did the tomatoe blush?"
+                + Environment.NewLine
+                + "It saw the salad dressing.",
+
+                Environment.NewLine
+                + "What does a martial arts expert drink?"
+                + Environment.NewLine
+                + "Kara-tea",
+
+                Environment.NewLine
+                + "A ham sandwich walks into a bar and orders a beer."
+                + Environment.NewLine
+                + "The bartender says 'Sorry, we don't serve food here.'",
+
+                Environment.NewLine
+                + "Why do ghosts love elevators?"
+                + Environment.NewLine
+                + "They lift their spirits.",
+
+                Environment.NewLine
+                + "What type of music do mummies listen to?"
+                + Environment.NewLine
+                + "Wrap music."
+                //40
+
+
+
+            };
+            return statement[rand.Next(0, 2)];
+
         }
         public static string GetInteractText()
         {

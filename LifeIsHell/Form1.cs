@@ -299,7 +299,7 @@ namespace LifeIsHell
                 btnEnterShop.Visible = false;
                 switch (fightCheck)
                 {
-                    case < 330:
+                    case < 1:
                         boxDirections.Visible = false;
                         boxCombat.Visible = true;
                         btnAttack.Visible = true;
@@ -309,7 +309,7 @@ namespace LifeIsHell
                         btnRun.Visible = true;
                         RandomEncounter();
                         break;
-                    case > 330:
+                    case > 1:
                         break;
                 }
 
