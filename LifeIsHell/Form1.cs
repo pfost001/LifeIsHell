@@ -292,6 +292,22 @@ namespace LifeIsHell
             {
                 btnEnterShop.Visible = true;
             }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -4 && currentPlayer.TowerDoorOpen == true)
+            {
+                btnEnterTwr.Visible = true;
+            }
+            else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 901)
+            {
+                btnExitTower.Visible = true;
+            }
+            else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 902)
+            {
+                btnExitTower.Visible = false;
+            }
+            else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 900)
+            {
+                btnExitTower.Visible = false;
+            }
 
             else
             {
@@ -567,6 +583,47 @@ namespace LifeIsHell
             }
         }
 
+        private void btnEnterTwr_Click(object sender, EventArgs e)
+        {
+            btnNorth.Visible = false;
+            btnSouth.Visible = false;
+            btnEast.Visible = false;
+            btnWest.Visible = false;
+            btnUp.Visible = true;
+            btnDown.Visible = true;
+            btnExitTower.Visible = true;
+            btnEnterTwr.Visible = false;
+            currentPlayer.PlayerLocX = 900;
+            currentPlayer.PlayerLocY = 901;
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+        }
+
+        private void btnExitTower_Click(object sender, EventArgs e)
+        {
+            btnNorth.Visible = true;
+            btnSouth.Visible = true;
+            btnEast.Visible = true;
+            btnWest.Visible = true;
+            btnUp.Visible = false;
+            btnDown.Visible = false;
+            btnExitTower.Visible = false;
+            btnEnterTwr.Visible = true;
+            currentPlayer.PlayerLocX = -3;
+            currentPlayer.PlayerLocY = -4;
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            currentPlayer.PlayerLocY++;
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            currentPlayer.PlayerLocY--;
+            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+        }
     }
 }
 

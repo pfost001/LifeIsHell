@@ -445,7 +445,9 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "You see a tower rising above the horizon to your West."
                     + Environment.NewLine
-                    + "There is a river of fire to your East.");
+                    + "There is a river of fire to your East."
+                    + Environment.NewLine
+                    + "A skull lays at your feet.");
             }
             else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -2)
             {
@@ -791,7 +793,7 @@ namespace LifeIsHell
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
                 if (currentPlayer.HealthElixerUp == false)
                 {
-                    
+
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText("You are in the Spike Fields."
@@ -934,7 +936,7 @@ namespace LifeIsHell
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
                 if (currentPlayer.SwordofDestiny == false)
                 {
-                    
+
 
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine);
@@ -1104,6 +1106,25 @@ namespace LifeIsHell
                     + Environment.NewLine
                     + "There is a stone wall to your North and West.");
             }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -4)
+            {
+                if (currentPlayer.TowerDoorOpen == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You stand at the base of a tower stretching into the sky."
+                        + Environment.NewLine
+                        + "There are five pedastals near the entrance to the tower.");
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You stand at the base of a tower stretching into the sky."
+                        + Environment.NewLine
+                        + "The front door is open.");
+                }
+            }
             else
             {
                 Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
@@ -1257,6 +1278,23 @@ namespace LifeIsHell
                     mainScreen.AppendText(GetSearchText());
                 }
             }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -4)
+            {
+                if (currentPlayer.TowerDoorOpen == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("There is no discernable way to open the door."
+                        + Environment.NewLine
+                        + "Each of the pedastals has a recess the size of golfball on top.");
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(GetSearchText());
+                }
+            }
             else
             {
                 mainScreen.AppendText(Environment.NewLine);
@@ -1301,10 +1339,10 @@ namespace LifeIsHell
                         + "You voice echoes off the sides of the pit, mixing with the screams of the dying.");
                 }
             }
-            else if ((currentPlayer.PlayerLocX == 6 || 
-                currentPlayer.PlayerLocX == 7 || 
-                currentPlayer.PlayerLocX == 8 || 
-                currentPlayer.PlayerLocX == 9 || 
+            else if ((currentPlayer.PlayerLocX == 6 ||
+                currentPlayer.PlayerLocX == 7 ||
+                currentPlayer.PlayerLocX == 8 ||
+                currentPlayer.PlayerLocX == 9 ||
                 currentPlayer.PlayerLocX == 10) &&
                 (currentPlayer.PlayerLocY == 3 ||
                 currentPlayer.PlayerLocY == 2 ||
@@ -1321,10 +1359,51 @@ namespace LifeIsHell
                 mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(PunishmentPoster());
             }
+            else if (currentPlayer.PlayerLocX == -2 && currentPlayer.PlayerLocY == -4)
+            {
+                if (currentPlayer.SkullTalkOne == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("The skull begins to talk to you."
+                        + Environment.NewLine
+                        + "'Hey " + currentPlayer.PlayerName + " you trying to get into the Tower of Suffering?'"
+                        + Environment.NewLine
+                        + "'I know how to open it'");
+                    currentPlayer.SkullTalkOne = true;
+
+                }
+                else if (currentPlayer.SkullTalkTwo == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("'You have to find the five orbs and place them in the correct pedastal.'"
+                        + Environment.NewLine
+                        + "'After that the door will open.'"
+                        + Environment.NewLine
+                        + "'Wanna know where the orbs are?'");
+                    currentPlayer.SkullTalkTwo = true;
+                }
+                else if (currentPlayer.SkullTalkThree == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("'Go talk to the gate guard at the Gates of Hell, to the North.'"
+                        + Environment.NewLine
+                        + "'They know where everything in Hell is.'");
+                    currentPlayer.SkullTalkThree = true;
+                }
+                else
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("The skull is no longer talking.");
+                }
+            }
             else
             {
                 mainScreen.AppendText(Environment.NewLine);
-                mainScreen.AppendText(Environment.NewLine); 
+                mainScreen.AppendText(Environment.NewLine);
                 mainScreen.AppendText(GetTalkText());
             }
 
@@ -1383,7 +1462,7 @@ namespace LifeIsHell
                     mainScreen.AppendText("You open the chest and find 500 coins!");
                     currentPlayer.PlayerCoin += 500;
                     currentPlayer.ChestOneOpen = true;
-                    
+
                 }
                 if (currentPlayer.ChestOneOpen == false && currentPlayer.KeyOne == false)
                 {
@@ -1473,6 +1552,74 @@ namespace LifeIsHell
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText(GetInteractText());
+                }
+            }
+            else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -4)
+            {
+                if (currentPlayer.RedOrbInserted == false && currentPlayer.RedOrbUp == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You insert the red orb into a pedastal.");
+                    currentPlayer.RedOrbInserted = true;
+                }
+                if (currentPlayer.GreenOrbInserted == false && currentPlayer.GreenOrbUp == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You insert the green orb into a pedastal.");
+                    currentPlayer.GreenOrbInserted = true;
+                }
+                if (currentPlayer.BlueOrbInserted == false && currentPlayer.BlueOrbUp == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You insert the blue orb into a pedastal.");
+                    currentPlayer.BlueOrbInserted = true;
+                }
+                if (currentPlayer.PurpleOrbInserted == false && currentPlayer.PurpleOrbUp == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You insert the purple orb into a pedastal.");
+                    currentPlayer.PurpleOrbInserted = true;
+                }
+                if (currentPlayer.YellowOrbInserted == false && currentPlayer.YellowOrbUp == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("You insert the yellow orb into a pedastal.");
+                    currentPlayer.YellowOrbInserted = true;
+                }
+                if (currentPlayer.GreenOrbInserted == true
+                    && currentPlayer.YellowOrbInserted == true
+                    && currentPlayer.RedOrbInserted == true
+                    && currentPlayer.BlueOrbInserted == true
+                    && currentPlayer.PurpleOrbInserted == true
+                    && currentPlayer.TowerDoorOpen == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("The doors swing open.");
+                    currentPlayer.TowerDoorOpen = true;
+                    btnEnterTwr.visible = true;
+                }
+                else if (currentPlayer.GreenOrbInserted == false
+                    || currentPlayer.YellowOrbInserted == false
+                    || currentPlayer.RedOrbInserted == false
+                    || currentPlayer.BlueOrbInserted == false
+                    || currentPlayer.PurpleOrbInserted == false
+                    && currentPlayer.TowerDoorOpen == false)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("The doors remain shut.");
+                }
+                else if (currentPlayer.TowerDoorOpen == true)
+                {
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText(Environment.NewLine);
+                    mainScreen.AppendText("The doors are already open.");
                 }
             }
             else
@@ -2382,7 +2529,7 @@ namespace LifeIsHell
             {
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {
-                    oForm1.btnEast.Visible =false;
+                    oForm1.btnEast.Visible = false;
                 }
                 foreach (frmStartGame oForm1 in Application.OpenForms.OfType<frmStartGame>())
                 {

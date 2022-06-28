@@ -35,6 +35,8 @@
             this.txtIntroText = new System.Windows.Forms.TextBox();
             this.btnIntroContinue = new System.Windows.Forms.Button();
             this.boxDirections = new System.Windows.Forms.GroupBox();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnInteract = new System.Windows.Forms.Button();
@@ -54,6 +56,8 @@
             this.btnPotion = new System.Windows.Forms.Button();
             this.btnRun = new System.Windows.Forms.Button();
             this.btnAttack = new System.Windows.Forms.Button();
+            this.btnEnterTwr = new System.Windows.Forms.Button();
+            this.btnExitTower = new System.Windows.Forms.Button();
             this.boxDirections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxMainScreen)).BeginInit();
             this.boxCombat.SuspendLayout();
@@ -158,6 +162,8 @@
             // boxDirections
             // 
             this.boxDirections.BackColor = System.Drawing.Color.Transparent;
+            this.boxDirections.Controls.Add(this.btnDown);
+            this.boxDirections.Controls.Add(this.btnUp);
             this.boxDirections.Controls.Add(this.btnSearch);
             this.boxDirections.Controls.Add(this.btnSave);
             this.boxDirections.Controls.Add(this.btnInteract);
@@ -175,6 +181,30 @@
             this.boxDirections.TabStop = false;
             this.boxDirections.Visible = false;
             this.boxDirections.Enter += new System.EventHandler(this.boxDirections_Enter);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.Black;
+            this.btnDown.Location = new System.Drawing.Point(171, 106);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(58, 48);
+            this.btnDown.TabIndex = 16;
+            this.btnDown.Text = "Down";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Visible = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.Black;
+            this.btnUp.Location = new System.Drawing.Point(176, 56);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(48, 48);
+            this.btnUp.TabIndex = 15;
+            this.btnUp.Text = "Up";
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Visible = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnSearch
             // 
@@ -331,7 +361,7 @@
             this.boxCombat.Controls.Add(this.btnPotion);
             this.boxCombat.Controls.Add(this.btnRun);
             this.boxCombat.Controls.Add(this.btnAttack);
-            this.boxCombat.Location = new System.Drawing.Point(568, 624);
+            this.boxCombat.Location = new System.Drawing.Point(570, 624);
             this.boxCombat.Name = "boxCombat";
             this.boxCombat.Size = new System.Drawing.Size(445, 200);
             this.boxCombat.TabIndex = 16;
@@ -394,12 +424,38 @@
             this.btnAttack.UseVisualStyleBackColor = false;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
+            // btnEnterTwr
+            // 
+            this.btnEnterTwr.BackColor = System.Drawing.Color.Black;
+            this.btnEnterTwr.Location = new System.Drawing.Point(1002, 712);
+            this.btnEnterTwr.Name = "btnEnterTwr";
+            this.btnEnterTwr.Size = new System.Drawing.Size(100, 48);
+            this.btnEnterTwr.TabIndex = 17;
+            this.btnEnterTwr.Text = "Enter Tower";
+            this.btnEnterTwr.UseVisualStyleBackColor = false;
+            this.btnEnterTwr.Visible = false;
+            this.btnEnterTwr.Click += new System.EventHandler(this.btnEnterTwr_Click);
+            // 
+            // btnExitTower
+            // 
+            this.btnExitTower.BackColor = System.Drawing.Color.Black;
+            this.btnExitTower.Location = new System.Drawing.Point(1002, 712);
+            this.btnExitTower.Name = "btnExitTower";
+            this.btnExitTower.Size = new System.Drawing.Size(100, 48);
+            this.btnExitTower.TabIndex = 18;
+            this.btnExitTower.Text = "Exit Tower";
+            this.btnExitTower.UseVisualStyleBackColor = false;
+            this.btnExitTower.Visible = false;
+            this.btnExitTower.Click += new System.EventHandler(this.btnExitTower_Click);
+            // 
             // frmStartGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.boxCombat);
+            this.Controls.Add(this.btnExitTower);
+            this.Controls.Add(this.btnEnterTwr);
             this.Controls.Add(this.btnEnterShop);
             this.Controls.Add(this.txtMainScreen);
             this.Controls.Add(this.picboxMainScreen);
@@ -454,5 +510,9 @@
         public Button btnWest;
         public Button btnSouth;
         public Button btnNorth;
+        private Button btnEnterTwr;
+        public Button btnDown;
+        public Button btnUp;
+        private Button btnExitTower;
     }
 }
