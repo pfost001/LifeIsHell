@@ -38,6 +38,8 @@ namespace LifeIsHell
         public bool PurpleOrbInserted = false;
         public bool GreenOrbUp = false;
         public bool GreenOrbInserted = false;
+        public bool HealthElixerUp = false;
+        public bool SwordofDestiny = false;
 
         public int EnemyPower()
         {
