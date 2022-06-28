@@ -1108,6 +1108,7 @@ namespace LifeIsHell
             }
             else if (currentPlayer.PlayerLocX == -3 && currentPlayer.PlayerLocY == -4)
             {
+                Getbuttons(currentPlayer.PlayerLocX, currentPlayer.PlayerLocY);
                 if (currentPlayer.TowerDoorOpen == false)
                 {
                     mainScreen.AppendText(Environment.NewLine);
@@ -1602,7 +1603,7 @@ namespace LifeIsHell
                     mainScreen.AppendText(Environment.NewLine);
                     mainScreen.AppendText("The doors swing open.");
                     currentPlayer.TowerDoorOpen = true;
-                    btnEnterTwr.visible = true;
+                    
                 }
                 else if (currentPlayer.GreenOrbInserted == false
                     || currentPlayer.YellowOrbInserted == false
