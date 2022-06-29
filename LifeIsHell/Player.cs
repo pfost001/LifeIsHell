@@ -46,6 +46,10 @@ namespace LifeIsHell
         public bool SkullTalkTwo = false;
         public bool SkullTalkThree = false;
         public bool TowerDoorOpen = false;
+        public bool TowerOneComplete = false;
+        public bool TowerTwoComplete = false;
+        public bool TowerThreeComplete = false;
+        public bool TowerBasementOpen = false;
 
         public int EnemyPower()
         {

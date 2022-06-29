@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace LifeIsHell
 {
-    
+
     public partial class frmStartGame : Form
     {
         Random rand = new Random();
@@ -48,18 +48,18 @@ namespace LifeIsHell
             btnNewGame.Visible = false;
             btnLoadGame.Visible = false;
             txtIntroText.Visible = true;
-            btnIntroContinue.Visible = true;          
-            
-            txtIntroText.Text = Environment.NewLine 
+            btnIntroContinue.Visible = true;
+
+            txtIntroText.Text = Environment.NewLine
                 + Environment.NewLine
-                + "You awake to screaming all around you." 
+                + "You awake to screaming all around you."
                 + Environment.NewLine
                 + "You are surrounded by fire and winged creatures fly through the sky."
-                + Environment.NewLine 
+                + Environment.NewLine
                 + "The smell of smoke and blood fills your nostrils.";
             //txtIntroText.AppendText("You are surrounded by fire and winged creatures fly through the sky." + Environment.NewLine);
             //txtIntroText.AppendText("'Hello' you hear from behind you.");
-           // firstText = true;           
+            // firstText = true;           
         }
 
         public string[] text =
@@ -70,7 +70,7 @@ namespace LifeIsHell
                 + "'Hello' you hear from behind you.",
             Environment.NewLine
                 + Environment.NewLine
-                + "You turn around and see the Devil." 
+                + "You turn around and see the Devil."
                 + Environment.NewLine
                 + "Not a devil, but THE Devil"
                 + Environment.NewLine
@@ -90,29 +90,29 @@ namespace LifeIsHell
                 + Environment.NewLine
                 + "'Don't worry too much. If you die, you'll be reborn right here.'"
                 + Environment.NewLine
-                + "'And every time you do die I get a little bump of endorphins.'" 
+                + "'And every time you do die I get a little bump of endorphins.'"
                 + Environment.NewLine
                 + "'It's pretty great.'",
             Environment.NewLine
                 + Environment.NewLine
                 + "'Have fun and I hope you die many many times.'"
                 + Environment.NewLine
-                + "'OH!' I almost forgot, there is a gift shop right here as well where you can spend your coins.'" 
+                + "'OH!' I almost forgot, there is a gift shop right here as well where you can spend your coins.'"
                 + Environment.NewLine
                 + "The devil tosses you a sort of half ass salute and walks off.",
             "",
-            
+
         };
         public int i = 0;
         private void btnIntroContinue_Click(object sender, EventArgs e)
         {
             PrintIntroText();
-            txtIntroText.Text = text[i]+ Environment.NewLine; //= text[i] +Environment.NewLine;
+            txtIntroText.Text = text[i] + Environment.NewLine; //= text[i] +Environment.NewLine;
             i++;
         }
         public void PrintIntroText() //this function provides the intro text when the continue button is pressed.
         {
-            if (i == text.Length-1)
+            if (i == text.Length - 1)
             {
                 btnIntroContinue.Visible = false;
                 txtIntroText.Visible = false;
@@ -239,7 +239,7 @@ namespace LifeIsHell
         private void btnInteract_Click(object sender, EventArgs e)
         {
             location.InteractLocation(currentPlayer, txtMainScreen);
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -288,7 +288,7 @@ namespace LifeIsHell
         //}
         public void RandomEncounterGen()
         {
-            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0) 
+            if (currentPlayer.PlayerLocX == 0 && currentPlayer.PlayerLocY == 0)
             {
                 btnEnterShop.Visible = true;
             }
@@ -303,19 +303,39 @@ namespace LifeIsHell
             else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 902)
             {
                 btnExitTower.Visible = false;
+                if (currentPlayer.TowerOneComplete == false)
+                {
+                    boxDirections.Visible = false;
+                    boxCombat.Visible = true;
+                    btnAttack.Visible = true;
+                    btnDefend.Visible = true;
+                    btnPotion.Visible = true;
+                    btnExitCombat.Visible = false;
+                    btnRun.Visible = true;
+                    btnUp.Visible = false;
+                    btnDown.Visible = false;
+                    CombatText(false, "Devil's Guard.", 15, 100);
+                }
+
+            }
+            else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 903)
+            {
+                if (currentPlayer.TowerTwoComplete == false)
+                {
+
+                }
             }
             else if (currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 900)
             {
                 btnExitTower.Visible = false;
             }
-
             else
             {
                 int fightCheck = rand.Next(0, 1000);
                 btnEnterShop.Visible = false;
                 switch (fightCheck)
                 {
-                    case < 1:
+                    case < 300:
                         boxDirections.Visible = false;
                         boxCombat.Visible = true;
                         btnAttack.Visible = true;
@@ -325,7 +345,7 @@ namespace LifeIsHell
                         btnRun.Visible = true;
                         RandomEncounter();
                         break;
-                    case > 1:
+                    case >= 300:
                         break;
                 }
 
@@ -353,6 +373,7 @@ namespace LifeIsHell
                 txtMainScreen.AppendText(Environment.NewLine);
                 ShowPlayerStats();
             }
+
             else
             {
                 txtMainScreen.AppendText("Enemy: " + name + Environment.NewLine);
@@ -384,6 +405,10 @@ namespace LifeIsHell
                         txtMainScreen.AppendText(Environment.NewLine);
                         ShowPlayerStats();
                         AreDead();
+                    }
+                    else if (enemyhealth <= 0 && currentPlayer.PlayerLocX == 900 && currentPlayer.PlayerLocY == 902)
+                    {
+                        txtMainScreen.AppendText("You beaten the Devil's Guard.");
                     }
                     else
                     {
@@ -495,15 +520,38 @@ namespace LifeIsHell
         }
         public void EndCombat()
         {
-            btnAttack.Visible = false;
-            btnDefend.Visible = false;
-            btnPotion.Visible = false;
-            btnRun.Visible = false;
-            btnExitCombat.Visible = true;
-            boxCombat.Visible = false;
-            boxDirections.Visible = true;
-            txtMainScreen.Text = "";
-            location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            if (currentPlayer.PlayerLocX == 900 &&
+                (currentPlayer.PlayerLocY == 899 ||
+                currentPlayer.PlayerLocY == 900 ||
+                currentPlayer.PlayerLocY == 901 ||
+                currentPlayer.PlayerLocY == 902 ||
+                currentPlayer.PlayerLocY == 903 ||
+                currentPlayer.PlayerLocY == 904))
+            {
+                btnAttack.Visible = false;
+                btnDefend.Visible = false;
+                btnPotion.Visible = false;
+                btnRun.Visible = false;
+                btnExitCombat.Visible = true;
+                boxCombat.Visible = false;
+                boxDirections.Visible = false;
+                btnUp.Visible = true;
+                btnDown.Visible = true;
+                txtMainScreen.Text = "";
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
+            else
+            {
+                btnAttack.Visible = false;
+                btnDefend.Visible = false;
+                btnPotion.Visible = false;
+                btnRun.Visible = false;
+                btnExitCombat.Visible = true;
+                boxCombat.Visible = false;
+                boxDirections.Visible = true;
+                txtMainScreen.Text = "";
+                location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
+            }
         }
 
 
@@ -517,7 +565,7 @@ namespace LifeIsHell
         public static string GetAttackText()
         {
             Random rand = new Random();
-            string[] statement = 
+            string[] statement =
             {
                 "You focus your efforts on a heavy attack.",
                 "You take a mighty swing with your sword.",
@@ -526,7 +574,7 @@ namespace LifeIsHell
             };
             return statement[rand.Next(0, 4)];
         }
-       
+
         private void btnAttack_Click(object sender, EventArgs e)
         {
             Combat("attack");
@@ -566,7 +614,7 @@ namespace LifeIsHell
                 string name = currentPlayer.PlayerName;
                 currentPlayer = new Player();
                 currentPlayer.PlayerName = name;
-                currentPlayer.PlayerCoin = 0;       
+                currentPlayer.PlayerCoin = 0;
                 location.PlayerLocation(currentPlayer, txtMainScreen, picboxMainScreen);
             }
         }
